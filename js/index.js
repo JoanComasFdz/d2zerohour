@@ -177,20 +177,54 @@ function result() {
   console.info(`Console1Pair = ${console1Pair}`)
   $('#console1PairResult span').html(console1Pair);  
 
-  if (data[console1Pair]) {
-    console.info("Console 1 pair found!")
-  } else {
+  if (!data[console1Pair]) {
     console.info("Console 1 pair NOT found ;(")
     $('#nodeToActivateValue').html('Nope');
     var nodeToActivate = document.getElementById('nodeToActivateValue');
     nodeToActivate.style.color = 'gray';
+    return
   }
+
+  console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
+
+  const keys = Object.keys(data[console1Pair])
+  if(keys.length == 1)
+  {
+    const key = keys[0]
+    const element = data[console1Pair][key]
+    console.info(`There is only one possible combo, so lets print this: ${JSON.stringify(element)}`)
+    $('#nodeToActivateValue').html(element);
+    color = element.split(' ')[0];
+    var nodeToActivate = document.getElementById('nodeToActivateValue');
+    nodeToActivate.style.color = color;
+
+    // Clear wheel3 
+    $('#wheel3 #cn-wrapper a').removeClass('active');
+    $('#wheel3 #cn-button').html('');
+    $('wheel3').click(false);
+    console2LeftValue = ''
+    // Clear wheel4
+    $('#wheel4 #cn-wrapper a').removeClass('active');
+    $('#wheel4 #cn-button').html('');
+    $('wheel4').click(false);
+    console2RightValue = ''
+
+    // Clear pair 2
+    $('#console2PairResult span').html('-');  
+    console1Pair = ''
+    return
+  }
+
+  $('wheel3').click(true);
+  $('wheel4').click(true);
 
   console2Pair =  console2LeftValue + '-' + console2RightValue
   console.info(`Console2Pair = ${console2Pair}`)
   $('#console2PairResult span').html(console2Pair);
 
-  if (data[console1Pair]) {
+  if (!data[console1Pair]) {
+
+  } else {
     $('#nodeToActivateValue').html('Ok, select next pair.');
     var nodeToActivate = document.getElementById('nodeToActivateValue');
     nodeToActivate.style.color = 'green'; 
