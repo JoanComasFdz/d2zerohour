@@ -12,6 +12,7 @@
 html,
 body {
 	height: 100%;
+	font-family: 'Lato', Arial, sans-serif;
 }
 
 body {
@@ -19,63 +20,37 @@ body {
 	color: #fff;
 }
 
-h2 {
+h1 {
+	margin:0;
+	padding:5px;
 	color: white;
 	background: black;
+	font-size:24px;
 }
 
-#container {
-	margin-top: 7em;
+.group {
+	position:relative;
+	width:100%;
 }
 
-#wheel1.component {
+.group .component {
 	position: relative;
-  display:block;
-  width:50%;
-  float:left;
-	margin-top: -2em;
-	margin-bottom: 3em;
-	height: 15em;
+	width:50%;
+	height:19em;
+	top:-8em;
 	background: rgba(0,0,0,0.05);
-	font-family: 'Lato', Arial, sans-serif;
+	
 }
 
-#wheel2.component {
-	position: relative;
-  display:block;
-  width:50%;
-  float:right;
-  	margin-top: 0em;
-	height: 15em;
-	background: rgba(0,0,0,0.05);
-	font-family: 'Lato', Arial, sans-serif;
-}
-
-
+#wheel1.component,
 #wheel3.component {
-	position: relative;
-  display:block;
-  width:50%;
   float:left;
-    margin-top: -2em;
-	margin-bottom: 3em;
-	height: 15em;
-	background: rgba(0,0,0,0.05);
-	font-family: 'Lato', Arial, sans-serif;
 }
 
-#wheel4.component {
-	position: relative;
-  display:block;
-  width:50%;
-  float:right;
-	margin-bottom: 3em;
-	height: 15em;
-	background: rgba(0,0,0,0.05);
-	font-family: 'Lato', Arial, sans-serif;
+#wheel2.component,
+#wheel4.component {	
+	float:right;
 }
-
-
 
 .cn-button {
 	position: absolute;
@@ -94,7 +69,7 @@ h2 {
 	color: Black;
 	text-align: center;
 	font-weight: 700;
-	font-size: 3em;
+	font-size: 2em;
 	text-transform: uppercase;
 	cursor: pointer;
 	-webkit-backface-visibility: hidden;
@@ -112,13 +87,6 @@ h2 {
 	border-radius: 50%;
 	background: transparent;
 	opacity: 0;
-	-webkit-transition: all .3s ease 0.3s;
-	-moz-transition: all .3s ease 0.3s;
-	transition: all .3s ease 0.3s;
-	-webkit-transform: scale(0.1);
-	-ms-transform: scale(0.1);
-	-moz-transform: scale(0.1);
-	transform: scale(0.1);
 	pointer-events: none;
 	overflow: hidden;
 }
@@ -143,9 +111,6 @@ h2 {
 .csstransforms .opened-nav {
 	border-radius: 50%;
 	opacity: 1;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
@@ -158,18 +123,11 @@ h2 {
 	top: 50%;
 	left: 50%;
 	overflow: hidden;
-	margin-top: -1.3em;
+	margin-top: 0.85em;
 	margin-left: -10em;
 	width: 10em;
 	height: 10em;
-	font-size: 1.5em;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	transition: all .3s ease;
-	-webkit-transform: rotate(75deg) skew(62deg); 
-	-moz-transform: rotate(75deg) skew(62deg); 
-	-ms-transform: rotate(75deg) skew(62deg); 
-	transform: rotate(75deg) skew(62deg); 
+	font-size: 1.2em;
 	-webkit-transform-origin: 100% 100%;
 	-moz-transform-origin: 100% 100%;
 	transform-origin: 100% 100%;
@@ -222,12 +180,6 @@ h2 {
 .csstransforms .cn-wrapper li a.active {
 	background:#FFFF00;
   color:#000;
-}
-
-.csstransforms .opened-nav li {
-	-webkit-transition: all .3s ease .3s;
-	-moz-transition: all .3s ease .3s;
-	transition: all .3s ease .3s;
 }
 
 .csstransforms .opened-nav li:first-child {
@@ -353,61 +305,41 @@ h2 {
 	display: none;
 }
 
-#console1PairResult {
+#console1PairResult,
+#console2PairResult,
+#console3PairResult,
+#nodeToActivate {
   position:relative;
   text-align:center;
 }
 
-#console1PairResult span {
+#console1PairResult span,
+#console2PairResult span,
+#console3PairResult span,
+#nodeToActivate span {
   margin:0 auto;
   display:block;
   text-align:center; 
   color:White;
-  font-size:4em;
+  font-size:3em;
   font-weight:700;
 }
 
-#console2PairResult {
-	position:relative;
-	text-align:center;
-}
-  
-#console2PairResult span {
-	margin:0 auto;
-	display:block;
-	text-align:center; 
-	color:white;
-	font-size:4em;
-	font-weight:700;
-}
 
-#console3PairResult {
-	position:relative;
-	text-align:center;
-}
-  
-#console3PairResult span {
-	margin:0 auto;
-	display:block;
-	text-align:center; 
-	color:#000;
-	font-size:4em;
-	font-weight:700;
-}
-
-#nodeToActivate {
-	position:relative;
-	text-align:center;
-}
-  
 #nodeToActivate span {
-	margin:0 auto;
-	margin-top: 1em;
-	display:block;
-	text-align:center; 
 	color:darkgray;
 	font-size:4em;
-	font-weight:700;
+	padding:0.5em 0
+}
+
+footer h2 {
+	font-size:1.2em;
+}
+footer p{
+	font-size:0.8em;
+}
+footer p a{
+	color:yellow;
 }
 
 
