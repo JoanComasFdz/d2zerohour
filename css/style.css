@@ -35,18 +35,22 @@ h1 {
 	font-size:24px;
 }
 
+.container {
+	max-width:980px;
+	margin:0 auto;
+}
+
 .group {
 	position:relative;
-	width:100%;
+	
 }
 
 .group .component {
 	position: relative;
 	width:50%;
 	height:19em;
-	top:-8em;
-	background: rgba(0,0,0,0.05);
-	
+	top:-9em;
+	background: rgba(0,0,0,0.05);	
 }
 
 #wheel1.component,
@@ -56,6 +60,7 @@ h1 {
 
 #wheel2.component,
 #wheel4.component {	
+	top:-7em;
 	float:right;
 }
 
@@ -158,10 +163,10 @@ h1 {
 	text-decoration: none;
 	font-size: 1.2em;
 	line-height: 2;
-	-webkit-transform: skew(-62deg) rotate(-75deg) scale(1);
-	-moz-transform: skew(-62deg) rotate(-75deg) scale(1);
-	-ms-transform: skew(-62deg) rotate(-75deg) scale(1);
-	transform: skew(-62deg) rotate(-75deg) scale(1);
+	-webkit-transform: skew(-62deg) rotate(-75deg) scale(0.9);
+	-moz-transform: skew(-62deg) rotate(-75deg) scale(0.9);
+	-ms-transform: skew(-62deg) rotate(-75deg) scale(0.9);
+	transform: skew(-62deg) rotate(-75deg) scale(0.9);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	pointer-events: auto;
