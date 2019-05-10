@@ -1,0 +1,4 @@
+1) Downlad the csv: https://docs.google.com/spreadsheets/u/1/d/1hl-3OjThGtM0azEC3_pfctBiTw2jFuwMjDsXSWaS9Ng/gviz/tq?tqx=out:csv&sheet=Sorted%20Terminal%20Combos
+2) Copy all text into variable 'combosCsv' in index.js
+3) Replace all " by nothing in that variable.
+4) Refresh index.html 
