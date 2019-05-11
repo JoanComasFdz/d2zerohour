@@ -64,25 +64,25 @@ var combosCsv = `1-1,2-12,8-10,White1
 
 
 
-var andresData = combosCsv.split('\n').reduce((memo, line) => {
-  var parts = line.split(',')
-  if (!memo[parts[0]]) {
-    var value = {}
-    value[parts[1]] = parts[3]
-    memo[parts[0]] = value
-  } else {
-    memo[parts[0]][parts[1]] = parts[3]
-  }
+// var andresData = combosCsv.split('\n').reduce((memo, line) => {
+//   var parts = line.split(',')
+//   if (!memo[parts[0]]) {
+//     var value = {}
+//     value[parts[1]] = parts[3]
+//     memo[parts[0]] = value
+//   } else {
+//     memo[parts[0]][parts[1]] = parts[3]
+//   }
   
-  return memo
-}, {})
+//   return memo
+// }, {})
 
-console.info(andresData)
+// console.info(andresData)
 
-console.info('-----------------------------------------------')
+// console.info('-----------------------------------------------')
 
 
-console.info(combosCsv)
+// console.info(combosCsv)
 
 
 var data = {}
@@ -182,15 +182,19 @@ function result() {
     $('#nodeToActivateValue').html('Nope');
     var nodeToActivate = document.getElementById('nodeToActivateValue');
     nodeToActivate.style.color = 'gray';
+
+    // Nothing found, no need to continue
     return
   }
 
   console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
 
-  const keys = Object.keys(data[console1Pair])
-  if(keys.length == 1)
+  const console1PairKeys = Object.keys(data[console1Pair])
+  if(console1PairKeys.length == 1)
   {
-    const key = keys[0]
+    // Only one possibility found under console1Pair, so no need to search further,
+    // just use that one.
+    const key = console1PairKeys[0]
     const element = data[console1Pair][key]
     console.info(`There is only one possible combo, so lets print this: ${JSON.stringify(element)}`)
     $('#nodeToActivateValue').html(element);
@@ -212,15 +216,56 @@ function result() {
     // Clear pair 2
     $('#console2PairResult span').html('-');  
     console1Pair = ''
+
+    console.info(`Console 1 Pair has only one combo, select it automatically: ${JSON.stringify(element)}`)
+
+    // Combo already found, no need to continue
     return
   }
 
+  console.info(`Console 1 has more that 1 combo.`)
+  // Console 1 has more than 1 combos.
   $('wheel3').click(true);
   $('wheel4').click(true);
 
   console2Pair =  console2LeftValue + '-' + console2RightValue
   console.info(`Console2Pair = ${console2Pair}`)
   $('#console2PairResult span').html(console2Pair);
+
+  if (console2Pair.length > 1 && console2Pair.endsWith('-')) {
+    // only the console left value has been introduced, but it might be enough
+
+    console.info(`Console 2 left value has been clicked, see if there is only one combo with it...`)
+
+    var elementsStartingWithLEftValue = 0
+    var lastElementStartingWithLeftValue = ''
+    for (let i = 0; i < console1PairKeys.length; i++) {
+      const element = console1PairKeys[i];
+      var elementLeftValue = element.split('-')[0]
+      console.info(`Analyzing element: ${JSON.stringify(element)}, left value: ${elementLeftValue}...`)
+      if (elementLeftValue === console2LeftValue) {
+        elementsStartingWithLEftValue++
+        lastElementStartingWithLeftValue = element
+        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${console2LeftValue}.`)
+      }
+    }
+
+    if (elementsStartingWithLEftValue === 1) {
+      console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithLeftValue}`)
+      console2Pair = lastElementStartingWithLeftValue
+      $('#console2PairResult span').html(console2Pair);
+      const element = data[console1Pair][console2Pair]
+      console.info (`Element is ${element}`)
+      $('#nodeToActivateValue').html(element);
+      color = element.split(' ')[0];
+      var nodeToActivate = document.getElementById('nodeToActivateValue');
+      nodeToActivate.style.color = color;
+      
+      return
+    }
+  }
+
+  console.info(`Console 1 pair exists, has more than one combo, and the console 2 left value has more than one combo...`)
 
   if (!data[console1Pair]) {
 
