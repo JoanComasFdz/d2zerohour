@@ -1,13 +1,9 @@
 
 var console1Pair = ''
-var console2Pair = ''
 var console3Pair = ''
 
 var console1LeftValue = ''
 var console1RightValue = ''
-
-var console2LeftValue = ''
-var console2RightValue = ''
 
 var console3LeftValue = ''
 var console3RightValue = ''
@@ -62,31 +58,8 @@ var combosCsv = `1-1,2-12,8-10,White1
 12-5,7-1,5-7,White4
 12-5,12-11,4-4,Blue1`
 
-
-
-// var andresData = combosCsv.split('\n').reduce((memo, line) => {
-//   var parts = line.split(',')
-//   if (!memo[parts[0]]) {
-//     var value = {}
-//     value[parts[1]] = parts[3]
-//     memo[parts[0]] = value
-//   } else {
-//     memo[parts[0]][parts[1]] = parts[3]
-//   }
-  
-//   return memo
-// }, {})
-
-// console.info(andresData)
-
-// console.info('-----------------------------------------------')
-
-
-// console.info(combosCsv)
-
-
+// PARSE CSV
 var data = {}
-
 var combos = combosCsv.split(/\r\n|\n/);
 for (let i = 0; i < combos.length; i++) {
   const element = combos[i];
@@ -106,71 +79,109 @@ for (let i = 0; i < combos.length; i++) {
   data[values[0]][values[2]] = terminal
 }
 
-// The array looks like:
-// data['1-2']['3-4'] = 'White 1'
-console.info(data)
+console.info(data) // The array looks like: data['1-2']['3-4'] = 'White 1'
 
-$('#wheel1 #cn-wrapper a').click(function(event) {
+// DEFINE CLICK HANDLERS
+
+function wheel1Clicked() 
+{
+  // Clear wheels
+  for (let i = 1; i <= 12; i++) {
+    $('#c1w2li'+i).addClass("overlay")
+    $('#c1w3li'+i).addClass("overlay")
+  }
+
+  $('#wheel2 #cn-wrapper a').removeClass('active');
+  $('#wheel3 #cn-wrapper a').removeClass('active');
+
+  console1RightValue = ''
+  console3LeftValue  = ''
+
+  $('#wheel2 #cn-button').html(console1RightValue);
+  $('#wheel3 #cn-button').html(console3LeftValue );
+
+  $('#console3PairResult span').html('-');
+
+  const console1Keys = Object.keys(data)
+  for (let i = 0; i < console1Keys.length; i++) {
+    const element = console1Keys[i];
+    console.info(`Analyzing element ${JSON.stringify(element)} for left value ${console1LeftValue}`)
+    if (element.split('-')[0] === console1LeftValue) {
+      // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
+      console.info(`Found that ${element} starts with ${console1LeftValue}...`)
+      const rightValue = element.split('-')[1]
+      $('#c1w2li'+rightValue).removeClass("overlay")
+      console.info(`Activated ${rightValue}`)
+    } else {
+      console.info(`Found that ${element} does not start with ${console1LeftValue}  `)
+    }
+  }
+
+  result()
+}
+
+function wheel2Clicked() {
+  // Clear third wheel
+  for (let i = 1; i <= 12; i++) {
+    $('#c1w3li'+i).addClass("overlay")
+  }
+  $('#wheel3 #cn-wrapper a').removeClass('active');
+  console3LeftValue  = ''
+  $('#wheel3 #cn-button').html(console3LeftValue );
+  $('#console3PairResult span').html('-');
+
+  result()
+}
+
+function wheel3Clicked() {
+  result()
+}
+
+function c1w1ClickHandler(event) {
   console1LeftValue = $(this).attr("data-number");
   $('#wheel1 #cn-button').html(console1LeftValue);
-  //
+
   $('#wheel1 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
-  
-  result();
-});  
 
-$('#wheel2 #cn-wrapper a').click(function(event) {
+  // Clear temrinal
+  $('#nodeToActivateValue').html('Nope');
+  var nodeToActivate = document.getElementById('nodeToActivateValue');
+  nodeToActivate.style.color = 'gray';
+  
+  wheel1Clicked();
+}
+
+function c1w2ClickHandler(event) {
   console1RightValue = $(this).attr("data-number");
   $('#wheel2 #cn-button').html(console1RightValue);
   //
   $('#wheel2 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
   
-  result();
-});
+  wheel2Clicked();
+}
 
-$('#wheel3 #cn-wrapper a').click(function(event) {
-  console2LeftValue = $(this).attr("data-number");
-  console.info(`console 2 wheel3 value ${console2LeftValue}`)
-  $('#wheel3 #cn-button').html(console2LeftValue);
+function c1w3ClickHandler(event) {
+  console3LeftValue = $(this).attr("data-number");
+  console.info(`console 2 wheel3 value ${console3LeftValue}`)
+  $('#wheel3 #cn-button').html(console3LeftValue);
   //
   $('#wheel3 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');  
+  $(this).addClass('active');
   
-  result();
-});  
+  wheel3Clicked();
+}
 
-$('#wheel4 #cn-wrapper a').click(function(event) {
-  console2RightValue = $(this).attr("data-number");
-  console.info(`console 2 wheel4 value ${console2RightValue}`)
-  $('#wheel4 #cn-button').html(console2RightValue);
-  //
-  $('#wheel4 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');  
-  
-  result();
-});
+// SET CLICK HANDLERS
 
-// $('#wheel5 #cn-wrapper a').click(function(event) {
-//   console2LeftValue = $(this).attr("data-number");
-//   $('#wheel5 #cn-button').html(console2LeftValue);
-//   //
-//   $('#wheel5 #cn-wrapper a').removeClass('active');
-//   $(this).addClass('active');  
-  
-//   result();
-// });  
+$('#wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
 
-// $('#wheel6 #cn-wrapper a').click(function(event) {
-//   console3RightValue = $(this).attr("data-number");
-//   $('#wheel6 #cn-button').html(console3RightValue);
-//   //
-//   $('#wheel6 #cn-wrapper a').removeClass('active');
-//   $(this).addClass('active');  
-  
-//   result();
-// }); 
+$('#wheel2 #cn-wrapper a').click(c1w2ClickHandler);
+
+$('#wheel3 #cn-wrapper a').click(c2w3ClickHandler);
+
+// TERMINAL CALCULATION
 
 function result() {
   console1Pair =  console1LeftValue + '-' + console1RightValue
@@ -190,6 +201,20 @@ function result() {
   console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
 
   const console1PairKeys = Object.keys(data[console1Pair])
+
+   // Clear third wheel
+   for (let i = 1; i < 12; i++) {
+    $('#c1w3li'+i).addClass("overlay")
+  }
+  for (let i = 0; i < console1PairKeys.length; i++) {
+    const element = console1PairKeys[i];
+    console.info(`Analyzing element ${JSON.stringify(element)}...`)
+    const leftValue = element.split('-')[0]
+    // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
+    $('#c1w3li'+leftValue).removeClass("overlay")
+    console.info(`Activated ${leftValue}`)
+  }
+
   if(console1PairKeys.length == 1)
   {
     // Only one possibility found under console1Pair, so no need to search further,
@@ -202,59 +227,44 @@ function result() {
     var nodeToActivate = document.getElementById('nodeToActivateValue');
     nodeToActivate.style.color = color;
 
-    // Clear wheel3 
-    $('#wheel3 #cn-wrapper a').removeClass('active');
-    $('#wheel3 #cn-button').html('');
-    $('wheel3').click(false);
-    console2LeftValue = ''
-    // Clear wheel4
-    $('#wheel4 #cn-wrapper a').removeClass('active');
-    $('#wheel4 #cn-button').html('');
-    $('wheel4').click(false);
-    console2RightValue = ''
-
-    // Clear pair 2
-    $('#console2PairResult span').html('-');  
-    console1Pair = ''
+    console3LeftValue = key.split('-')[0]
+    $('#wheel3 #cn-button').html(console3LeftValue);
+    $('#console3PairResult span').html(key);  
 
     console.info(`Console 1 Pair has only one combo, select it automatically: ${JSON.stringify(element)}`)
 
-    // Combo already found, no need to continue
     return
   }
 
   console.info(`Console 1 has more that 1 combo.`)
   // Console 1 has more than 1 combos.
-  $('wheel3').click(true);
-  $('wheel4').click(true);
 
-  console2Pair =  console2LeftValue + '-' + console2RightValue
-  console.info(`Console2Pair = ${console2Pair}`)
-  $('#console2PairResult span').html(console2Pair);
+  console3Pair =  console3LeftValue   + '-' + console3RightValue 
+  console.info(`console3Pair = ${console3Pair}`)
+  $('#console3PairResult span').html(console3Pair);
 
-  if (console2Pair.length > 1 && console2Pair.endsWith('-')) {
-    // only the console left value has been introduced, but it might be enough
+  if (console3Pair.length > 1 && console3Pair.split('-')[0] !== '')  {
 
     console.info(`Console 2 left value has been clicked, see if there is only one combo with it...`)
 
-    var elementsStartingWithLEftValue = 0
+    var elementsStartingWithLeftValue = 0
     var lastElementStartingWithLeftValue = ''
     for (let i = 0; i < console1PairKeys.length; i++) {
       const element = console1PairKeys[i];
       var elementLeftValue = element.split('-')[0]
       console.info(`Analyzing element: ${JSON.stringify(element)}, left value: ${elementLeftValue}...`)
-      if (elementLeftValue === console2LeftValue) {
-        elementsStartingWithLEftValue++
+      if (elementLeftValue === console3RightValue  ) {
+        elementsStartingWithLeftValue++
         lastElementStartingWithLeftValue = element
-        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${console2LeftValue}.`)
+        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${elementLeftValue  }.`)
       }
     }
 
-    if (elementsStartingWithLEftValue === 1) {
-      console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithLeftValue}`)
-      console2Pair = lastElementStartingWithLeftValue
-      $('#console3PairResult span').html(console2Pair);
-      const element = data[console1Pair][console2Pair]
+    if (elementsStartingWithLeftValue === 1) {
+      console.info (`There is only 1 combo startgin with ${console3RightValue  }!, select it automatically: ${lastElementStartingWithLeftValue}`)
+      console3Pair = lastElementStartingWithLeftValue
+      $('#console3PairResult span').html(console3Pair);
+      const element = data[console1Pair][console3Pair]
       console.info (`Element is ${element}`)
       $('#nodeToActivateValue').html(element);
       color = element.split(' ')[0];
@@ -274,10 +284,10 @@ function result() {
     var nodeToActivate = document.getElementById('nodeToActivateValue');
     nodeToActivate.style.color = 'green'; 
 
-    if(data[console1Pair][console2Pair]) {
+    if(data[console1Pair][console3Pair]) {
       console.info("Console 1 Console 2 pair found!")
-      $('#nodeToActivateValue').html(data[console1Pair][console2Pair]);
-      color = data[console1Pair][console2Pair].split(' ')[0];
+      $('#nodeToActivateValue').html(data[console1Pair][console3Pair]);
+      color = data[console1Pair][console3Pair].split(' ')[0];
       var nodeToActivate = document.getElementById('nodeToActivateValue');
       nodeToActivate.style.color = color; 
     } else {
