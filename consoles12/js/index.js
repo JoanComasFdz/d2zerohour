@@ -58,31 +58,8 @@ var combosCsv = `1-1,2-12,8-10,White1
 12-5,7-1,5-7,White4
 12-5,12-11,4-4,Blue1`
 
-
-
-// var andresData = combosCsv.split('\n').reduce((memo, line) => {
-//   var parts = line.split(',')
-//   if (!memo[parts[0]]) {
-//     var value = {}
-//     value[parts[1]] = parts[3]
-//     memo[parts[0]] = value
-//   } else {
-//     memo[parts[0]][parts[1]] = parts[3]
-//   }
-  
-//   return memo
-// }, {})
-
-// console.info(andresData)
-
-// console.info('-----------------------------------------------')
-
-
-// console.info(combosCsv)
-
-
+// PARSE CSV
 var data = {}
-
 var combos = combosCsv.split(/\r\n|\n/);
 for (let i = 0; i < combos.length; i++) {
   const element = combos[i];
@@ -102,9 +79,9 @@ for (let i = 0; i < combos.length; i++) {
   data[values[0]][values[1]] = terminal
 }
 
-// The array looks like:
-// data['1-2']['3-4'] = 'White 1'
-console.info(data)
+console.info(data) // The array looks like: data['1-2']['3-4'] = 'White 1'
+
+// DEFINE CLICK HANDLERS
 
 function wheel1Clicked() 
 {
@@ -136,12 +113,9 @@ function wheel1Clicked()
       $('#c1w2li'+rightValue).removeClass("overlay")
       console.info(`Activated ${rightValue}`)
     } else {
-      // DEACTIVETE NOT POSSIBLE VALUE
       console.info(`Found that ${element} does not start with ${console1LeftValue}  `)
     }
   }
-
-
 
   result()
 }
@@ -177,6 +151,7 @@ function c1w1ClickHandler(event) {
   
   wheel1Clicked();
 }
+
 function c1w2ClickHandler(event) {
   console1RightValue = $(this).attr("data-number");
   $('#wheel2 #cn-button').html(console1RightValue);
@@ -186,16 +161,7 @@ function c1w2ClickHandler(event) {
   
   wheel2Clicked();
 }
-// function c1w3ClickHandler(event) {
-//   console2LeftValue = $(this).attr("data-number");
-//   console.info(`console 2 wheel3 value ${console2LeftValue}`)
-//   $('#wheel3 #cn-button').html(console2LeftValue);
-//   //
-//   $('#wheel3 #cn-wrapper a').removeClass('active');
-//   $(this).addClass('active');  
-  
-//   result();
-// }
+
 function c1w4ClickHandler(event) {
   console2RightValue = $(this).attr("data-number");
   console.info(`console 2 wheel4 value ${console2RightValue}`)
@@ -207,12 +173,15 @@ function c1w4ClickHandler(event) {
   wheel4Clicked();
 }
 
+// SET CLICK HANDLERS
+
 $('#wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
 
 $('#wheel2 #cn-wrapper a').click(c1w2ClickHandler);
 
 $('#wheel4 #cn-wrapper a').click(c1w4ClickHandler);
 
+// TERMINAL CALCULATION
 
 function result() {
   console1Pair =  console1LeftValue + '-' + console1RightValue
@@ -232,19 +201,17 @@ function result() {
   console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
 
   const console1PairKeys = Object.keys(data[console1Pair])
-
-  // Clear third wheel
-  for (let i = 1; i < 12; i++) {
-    $('#c1w4li'+i).addClass("overlay")
-  }
-  for (let i = 0; i < console1PairKeys.length; i++) {
-    const element = console1PairKeys[i];
-    console.info(`Analyzing element ${JSON.stringify(element)}...`)
-    const rightValue = element.split('-')[1]
-    // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-    $('#c1w4li'+rightValue).removeClass("overlay")
-    console.info(`Activated ${rightValue}`)
-  }
+  // for (let i = 1; i < 12; i++) {
+  //   $('#c1w4li'+i).addClass("overlay")
+  // }
+  // for (let i = 0; i < console1PairKeys.length; i++) {
+  //   const element = console1PairKeys[i];
+  //   console.info(`Analyzing element ${JSON.stringify(element)}...`)
+  //   const rightValue = element.split('-')[1]
+  //   // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
+  //   $('#c1w4li'+rightValue).removeClass("overlay")
+  //   console.info(`Activated ${rightValue}`)
+  // }
 
 
   if(console1PairKeys.length == 1)
