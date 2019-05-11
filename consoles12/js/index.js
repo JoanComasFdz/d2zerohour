@@ -1,16 +1,12 @@
 
 var console1Pair = ''
 var console2Pair = ''
-var console3Pair = ''
 
 var console1LeftValue = ''
 var console1RightValue = ''
 
 var console2LeftValue = ''
 var console2RightValue = ''
-
-var console3LeftValue = ''
-var console3RightValue = ''
 
 var combosCsv = `1-1,2-12,8-10,White1
 1-1,4-5,6-5,Red2
@@ -110,72 +106,115 @@ for (let i = 0; i < combos.length; i++) {
 // data['1-2']['3-4'] = 'White 1'
 console.info(data)
 
-$('#wheel1 #cn-wrapper a').click(function(event) {
+function wheel1Clicked() 
+{
+  // Clear wheels
+  for (let i = 1; i <= 12; i++) {
+    $('#c1w2li'+i).addClass("overlay")
+    $('#c1w4li'+i).addClass("overlay")
+  }
+
+  $('#wheel2 #cn-wrapper a').removeClass('active');
+  $('#wheel4 #cn-wrapper a').removeClass('active');
+
+  console1RightValue = ''
+  console2RightValue = ''
+
+  $('#wheel2 #cn-button').html(console1RightValue);
+  $('#wheel4 #cn-button').html(console2RightValue);
+
+  $('#console2PairResult span').html('-');
+
+  const console1Keys = Object.keys(data)
+  for (let i = 0; i < console1Keys.length; i++) {
+    const element = console1Keys[i];
+    console.info(`Analyzing element ${JSON.stringify(element)} for left value ${console1LeftValue}`)
+    if (element.split('-')[0] === console1LeftValue) {
+      // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
+      console.info(`Found that ${element} starts with ${console1LeftValue}...`)
+      const rightValue = element.split('-')[1]
+      $('#c1w2li'+rightValue).removeClass("overlay")
+      console.info(`Activated ${rightValue}`)
+    } else {
+      // DEACTIVETE NOT POSSIBLE VALUE
+      console.info(`Found that ${element} does not start with ${console1LeftValue}  `)
+    }
+  }
+
+
+
+  result()
+}
+
+function wheel2Clicked() {
+  // Clear third wheel
+  for (let i = 1; i < 12; i++) {
+    $('#c1w4li'+i).addClass("overlay")
+  }
+
+  result()
+}
+
+function wheel4Clicked() {
+  result()
+}
+
+
+function c1w1ClickHandler(event) {
   console1LeftValue = $(this).attr("data-number");
   $('#wheel1 #cn-button').html(console1LeftValue);
-  //
+
   $('#wheel1 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
-  
-  result();
-});  
 
-$('#wheel2 #cn-wrapper a').click(function(event) {
+  // Clear temrinal
+  $('#nodeToActivateValue').html('Nope');
+  var nodeToActivate = document.getElementById('nodeToActivateValue');
+  nodeToActivate.style.color = 'gray';
+  
+  wheel1Clicked();
+}
+function c1w2ClickHandler(event) {
   console1RightValue = $(this).attr("data-number");
   $('#wheel2 #cn-button').html(console1RightValue);
   //
   $('#wheel2 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
   
-  result();
-});
-
-$('#wheel3 #cn-wrapper a').click(function(event) {
-  console2LeftValue = $(this).attr("data-number");
-  console.info(`console 2 wheel3 value ${console2LeftValue}`)
-  $('#wheel3 #cn-button').html(console2LeftValue);
-  //
-  $('#wheel3 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');  
+  wheel2Clicked();
+}
+// function c1w3ClickHandler(event) {
+//   console2LeftValue = $(this).attr("data-number");
+//   console.info(`console 2 wheel3 value ${console2LeftValue}`)
+//   $('#wheel3 #cn-button').html(console2LeftValue);
+//   //
+//   $('#wheel3 #cn-wrapper a').removeClass('active');
+//   $(this).addClass('active');  
   
-  result();
-});  
-
-$('#wheel4 #cn-wrapper a').click(function(event) {
+//   result();
+// }
+function c1w4ClickHandler(event) {
   console2RightValue = $(this).attr("data-number");
   console.info(`console 2 wheel4 value ${console2RightValue}`)
   $('#wheel4 #cn-button').html(console2RightValue);
   //
   $('#wheel4 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');  
+  $(this).addClass('active');
   
-  result();
-});
+  wheel4Clicked();
+}
 
-// $('#wheel5 #cn-wrapper a').click(function(event) {
-//   console2LeftValue = $(this).attr("data-number");
-//   $('#wheel5 #cn-button').html(console2LeftValue);
-//   //
-//   $('#wheel5 #cn-wrapper a').removeClass('active');
-//   $(this).addClass('active');  
-  
-//   result();
-// });  
+$('#wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
 
-// $('#wheel6 #cn-wrapper a').click(function(event) {
-//   console3RightValue = $(this).attr("data-number");
-//   $('#wheel6 #cn-button').html(console3RightValue);
-//   //
-//   $('#wheel6 #cn-wrapper a').removeClass('active');
-//   $(this).addClass('active');  
-  
-//   result();
-// }); 
+$('#wheel2 #cn-wrapper a').click(c1w2ClickHandler);
+
+$('#wheel4 #cn-wrapper a').click(c1w4ClickHandler);
+
 
 function result() {
   console1Pair =  console1LeftValue + '-' + console1RightValue
   console.info(`Console1Pair = ${console1Pair}`)
-  $('#console1PairResult span').html(console1Pair);  
+  $('#console1PairResult span').html(console1Pair);
 
   if (!data[console1Pair]) {
     console.info("Console 1 pair NOT found ;(")
@@ -190,6 +229,21 @@ function result() {
   console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
 
   const console1PairKeys = Object.keys(data[console1Pair])
+
+  // Clear third wheel
+  for (let i = 1; i < 12; i++) {
+    $('#c1w4li'+i).addClass("overlay")
+  }
+  for (let i = 0; i < console1PairKeys.length; i++) {
+    const element = console1PairKeys[i];
+    console.info(`Analyzing element ${JSON.stringify(element)}...`)
+    const rightValue = element.split('-')[1]
+    // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
+    $('#c1w4li'+rightValue).removeClass("overlay")
+    console.info(`Activated ${rightValue}`)
+  }
+
+
   if(console1PairKeys.length == 1)
   {
     // Only one possibility found under console1Pair, so no need to search further,
@@ -202,24 +256,13 @@ function result() {
     var nodeToActivate = document.getElementById('nodeToActivateValue');
     nodeToActivate.style.color = color;
 
-    // Clear wheel3 
-    $('#wheel3 #cn-wrapper a').removeClass('active');
-    $('#wheel3 #cn-button').html('');
-    $('wheel3').click(false);
-    console2LeftValue = ''
-    // Clear wheel4
-    $('#wheel4 #cn-wrapper a').removeClass('active');
-    $('#wheel4 #cn-button').html('');
-    $('wheel4').click(false);
-    console2RightValue = ''
-
-    // Clear pair 2
-    $('#console2PairResult span').html('-');  
+    console2RightValue = key.split('-')[1]
+    $('#wheel4 #cn-button').html(console2RightValue);
+    $('#console2PairResult span').html(key);  
     console1Pair = ''
 
     console.info(`Console 1 Pair has only one combo, select it automatically: ${JSON.stringify(element)}`)
 
-    // Combo already found, no need to continue
     return
   }
 
@@ -232,7 +275,7 @@ function result() {
   console.info(`Console2Pair = ${console2Pair}`)
   $('#console2PairResult span').html(console2Pair);
 
-  if (console2Pair.length > 1 && console2Pair.startsWith('-')) {
+  if (console2Pair.length > 1 && console2Pair.split('-')[0] !== '') {
     // only the console right value has been introduced, but it might be enough
 
     console.info(`Console 2 right value has been clicked, see if there is only one combo with it...`)
