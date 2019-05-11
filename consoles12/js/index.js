@@ -278,8 +278,7 @@ function result() {
   console.info(`Console2Pair = ${console2Pair}`)
   $('#console2PairResult span').html(console2Pair);
 
-  if (console2Pair.length > 1 && console2Pair.split('-')[0] !== '') {
-    // only the console right value has been introduced, but it might be enough
+  if (console2Pair.length > 1 && console2Pair.split('-')[1] !== '') {
 
     console.info(`Console 2 right value has been clicked, see if there is only one combo with it...`)
 
