@@ -201,18 +201,21 @@ function result() {
   console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
 
   const console1PairKeys = Object.keys(data[console1Pair])
-  // for (let i = 1; i < 12; i++) {
-  //   $('#c1w4li'+i).addClass("overlay")
-  // }
-  // for (let i = 0; i < console1PairKeys.length; i++) {
-  //   const element = console1PairKeys[i];
-  //   console.info(`Analyzing element ${JSON.stringify(element)}...`)
-  //   const rightValue = element.split('-')[1]
-  //   // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-  //   $('#c1w4li'+rightValue).removeClass("overlay")
-  //   console.info(`Activated ${rightValue}`)
-  // }
 
+  // Clear third wheel since wheel 1 and wheel 2 have been clicked.
+  for (let i = 1; i <= 12; i++) {
+    $('#c1w4li'+i).addClass("overlay")
+  }
+
+  // Activate in wheel 2 only the items beloning to wheel 1
+  for (let i = 0; i < console1PairKeys.length; i++) {
+    const element = console1PairKeys[i];
+    console.info(`Analyzing element ${JSON.stringify(element)}...`)
+    const rightValue = element.split('-')[1]
+    // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
+    $('#c1w4li'+rightValue).removeClass("overlay")
+    console.info(`Activated ${rightValue}`)
+  }
 
   if(console1PairKeys.length == 1)
   {
@@ -238,8 +241,6 @@ function result() {
 
   console.info(`Console 1 has more that 1 combo.`)
   // Console 1 has more than 1 combos.
-  $('wheel3').click(true);
-  $('wheel4').click(true);
 
   console2Pair =  console2LeftValue + '-' + console2RightValue
   console.info(`Console2Pair = ${console2Pair}`)
