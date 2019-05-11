@@ -253,7 +253,7 @@ function result() {
     if (elementsStartingWithLEftValue === 1) {
       console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithLeftValue}`)
       console2Pair = lastElementStartingWithLeftValue
-      $('#console2PairResult span').html(console2Pair);
+      $('#console3PairResult span').html(console2Pair);
       const element = data[console1Pair][console2Pair]
       console.info (`Element is ${element}`)
       $('#nodeToActivateValue').html(element);
