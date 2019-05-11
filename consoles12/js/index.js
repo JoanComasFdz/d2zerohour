@@ -232,27 +232,27 @@ function result() {
   console.info(`Console2Pair = ${console2Pair}`)
   $('#console2PairResult span').html(console2Pair);
 
-  if (console2Pair.length > 1 && console2Pair.endsWith('-')) {
-    // only the console left value has been introduced, but it might be enough
+  if (console2Pair.length > 1 && console2Pair.startsWith('-')) {
+    // only the console right value has been introduced, but it might be enough
 
-    console.info(`Console 2 left value has been clicked, see if there is only one combo with it...`)
+    console.info(`Console 2 right value has been clicked, see if there is only one combo with it...`)
 
-    var elementsStartingWithLEftValue = 0
-    var lastElementStartingWithLeftValue = ''
+    var elementsStartingWithRightValue = 0
+    var lastElementStartingWithRightValue = ''
     for (let i = 0; i < console1PairKeys.length; i++) {
       const element = console1PairKeys[i];
-      var elementLeftValue = element.split('-')[0]
-      console.info(`Analyzing element: ${JSON.stringify(element)}, left value: ${elementLeftValue}...`)
-      if (elementLeftValue === console2LeftValue) {
-        elementsStartingWithLEftValue++
-        lastElementStartingWithLeftValue = element
-        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${console2LeftValue}.`)
+      var elementRightValue = element.split('-')[1]
+      console.info(`Analyzing element: ${JSON.stringify(element)}, right value: ${elementRightValue}...`)
+      if (elementRightValue === console2RightValue) {
+        elementsStartingWithRightValue++
+        lastElementStartingWithRightValue = element
+        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${elementRightValue}.`)
       }
     }
 
-    if (elementsStartingWithLEftValue === 1) {
-      console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithLeftValue}`)
-      console2Pair = lastElementStartingWithLeftValue
+    if (elementsStartingWithRightValue === 1) {
+      console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithRightValue}`)
+      console2Pair = lastElementStartingWithRightValue
       $('#console2PairResult span').html(console2Pair);
       const element = data[console1Pair][console2Pair]
       console.info (`Element is ${element}`)
