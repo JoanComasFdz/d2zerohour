@@ -138,6 +138,7 @@ function wheel3Clicked() {
 }
 
 function c1w1ClickHandler(event) {
+  event.preventDefault();
   console1LeftValue = $(this).attr("data-number");
   $('#console13 #wheel1 #cn-button').html(console1LeftValue);
 
@@ -153,6 +154,7 @@ function c1w1ClickHandler(event) {
 }
 
 function c1w2ClickHandler(event) {
+  event.preventDefault();
   console1RightValue = $(this).attr("data-number");
   $('#console13 #wheel2 #cn-button').html(console1RightValue);
   //
@@ -163,6 +165,7 @@ function c1w2ClickHandler(event) {
 }
 
 function c3w3ClickHandler(event) {
+  event.preventDefault();
   console3LeftValue = $(this).attr("data-number");
   console.info(`console 2 wheel3 value ${console3LeftValue}`)
   $('#console13 #wheel3 #cn-button').html(console3LeftValue);
