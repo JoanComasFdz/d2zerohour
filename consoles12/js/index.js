@@ -1,12 +1,12 @@
 
-var console1Pair = ''
-var console2Pair = ''
+var firstConsolePair = ''
+var secondConsolePair = ''
 
-var console1LeftValue = ''
-var console1RightValue = ''
+var firstConsoleLeftValue = ''
+var firstConsoleRightValue = ''
 
-var console2LeftValue = ''
-var console2RightValue = ''
+var secondConsoleLeftValue = ''
+var secondConsoleRightValue = ''
 
 var combosCsv = `1-1,2-12,8-10,White1
 1-1,4-5,6-5,Red2
@@ -87,59 +87,59 @@ function wheel1Clicked()
 {
   // Clear wheels
   for (let i = 1; i <= 12; i++) {
-    $('#c1w2li'+i).addClass("overlay")
-    $('#c1w4li'+i).addClass("overlay")
+    $('#w2li'+i).addClass("overlay")
+    $('#w3li'+i).addClass("overlay")
   }
 
   $('#wheel2 #cn-wrapper a').removeClass('active');
   $('#wheel4 #cn-wrapper a').removeClass('active');
 
-  console1RightValue = ''
-  console2RightValue = ''
+  firstConsoleRightValue = ''
+  secondConsoleRightValue = ''
 
-  $('#wheel2 #cn-button').html(console1RightValue);
-  $('#wheel4 #cn-button').html(console2RightValue);
+  $('#wheel2 #cn-button').html(firstConsoleRightValue);
+  $('#wheel4 #cn-button').html(secondConsoleRightValue);
 
-  $('#console2PairResult span').html('-');
+  $('#secondConsolePairResult span').html('-');
 
-  const console1Keys = Object.keys(data)
-  for (let i = 0; i < console1Keys.length; i++) {
-    const element = console1Keys[i];
-    console.info(`Analyzing element ${JSON.stringify(element)} for left value ${console1LeftValue}`)
-    if (element.split('-')[0] === console1LeftValue) {
+  const firstConsoleKeys = Object.keys(data)
+  for (let i = 0; i < firstConsoleKeys.length; i++) {
+    const element = firstConsoleKeys[i];
+    console.info(`Analyzing element ${JSON.stringify(element)} for left value ${firstConsoleLeftValue}`)
+    if (element.split('-')[0] === firstConsoleLeftValue) {
       // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-      console.info(`Found that ${element} starts with ${console1LeftValue}...`)
+      console.info(`Found that ${element} starts with ${firstConsoleLeftValue}...`)
       const rightValue = element.split('-')[1]
-      $('#c1w2li'+rightValue).removeClass("overlay")
+      $('#w2li'+rightValue).removeClass("overlay")
       console.info(`Activated ${rightValue}`)
     } else {
-      console.info(`Found that ${element} does not start with ${console1LeftValue}  `)
+      console.info(`Found that ${element} does not start with ${firstConsoleLeftValue}  `)
     }
   }
 
-  result()
+  findTerminal(false)
 }
 
 function wheel2Clicked() {
   // Clear third wheel
   for (let i = 1; i <= 12; i++) {
-    $('#c1w4li'+i).addClass("overlay")
+    $('#w3li'+i).addClass("overlay")
   }
   $('#wheel4 #cn-wrapper a').removeClass('active');
-  console2RightValue = ''
-  $('#wheel4 #cn-button').html(console2RightValue);
-  $('#console2PairResult span').html('-');
+  secondConsoleRightValue = ''
+  $('#wheel4 #cn-button').html(secondConsoleRightValue);
+  $('#secondConsolePairResult span').html('-');
 
-  result()
+  findTerminal(false)
 }
 
 function wheel4Clicked() {
-  result()
+  findTerminal(false)
 }
 
-function c1w1ClickHandler(event) {
-  console1LeftValue = $(this).attr("data-number");
-  $('#wheel1 #cn-button').html(console1LeftValue);
+function c1w2ClickHandler(event) {
+  firstConsoleLeftValue = $(this).attr("data-number");
+  $('#wheel1 #cn-button').html(firstConsoleLeftValue);
 
   $('#wheel1 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
@@ -152,9 +152,9 @@ function c1w1ClickHandler(event) {
   wheel1Clicked();
 }
 
-function c1w2ClickHandler(event) {
-  console1RightValue = $(this).attr("data-number");
-  $('#wheel2 #cn-button').html(console1RightValue);
+function w2ClickHandler(event) {
+  firstConsoleRightValue = $(this).attr("data-number");
+  $('#wheel2 #cn-button').html(firstConsoleRightValue);
   //
   $('#wheel2 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
@@ -162,10 +162,10 @@ function c1w2ClickHandler(event) {
   wheel2Clicked();
 }
 
-function c1w4ClickHandler(event) {
-  console2RightValue = $(this).attr("data-number");
-  console.info(`console 2 wheel4 value ${console2RightValue}`)
-  $('#wheel4 #cn-button').html(console2RightValue);
+function w3ClickHandler(event) {
+  secondConsoleRightValue = $(this).attr("data-number");
+  console.info(`console 2 wheel4 value ${secondConsoleRightValue}`)
+  $('#wheel4 #cn-button').html(secondConsoleRightValue);
   //
   $('#wheel4 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');
@@ -175,133 +175,11 @@ function c1w4ClickHandler(event) {
 
 // SET CLICK HANDLERS
 
-$('#wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
+$('#wheel1 #cn-wrapper a').click(c1w2ClickHandler);  
 
-$('#wheel2 #cn-wrapper a').click(c1w2ClickHandler);
+$('#wheel2 #cn-wrapper a').click(w2ClickHandler);
 
-$('#wheel4 #cn-wrapper a').click(c1w4ClickHandler);
-
-// TERMINAL CALCULATION
-
-function result() {
-  console1Pair =  console1LeftValue + '-' + console1RightValue
-  console.info(`Console1Pair = ${console1Pair}`)
-  $('#console1PairResult span').html(console1Pair);
-
-  if (!data[console1Pair]) {
-    console.info("Console 1 pair NOT found ;(")
-    $('#nodeToActivateValue').html('Nope');
-    var nodeToActivate = document.getElementById('nodeToActivateValue');
-    nodeToActivate.style.color = 'gray';
-
-    // Nothing found, no need to continue
-    return
-  }
-
-  console.info(`Console 1 pair found!: ${JSON.stringify(data[console1Pair])}`)
-
-  const console1PairKeys = Object.keys(data[console1Pair])
-
-  // Clear third wheel since wheel 1 and wheel 2 have been clicked.
-  for (let i = 1; i <= 12; i++) {
-    $('#c1w4li'+i).addClass("overlay")
-  }
-
-  // Activate in wheel 2 only the items beloning to wheel 1
-  for (let i = 0; i < console1PairKeys.length; i++) {
-    const element = console1PairKeys[i];
-    console.info(`Analyzing element ${JSON.stringify(element)}...`)
-    const rightValue = element.split('-')[1]
-    // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-    $('#c1w4li'+rightValue).removeClass("overlay")
-    console.info(`Activated ${rightValue}`)
-  }
-
-  if(console1PairKeys.length == 1)
-  {
-    // Only one possibility found under console1Pair, so no need to search further,
-    // just use that one.
-    const key = console1PairKeys[0]
-    const element = data[console1Pair][key]
-    console.info(`There is only one possible combo, so lets print this: ${JSON.stringify(element)}`)
-    $('#nodeToActivateValue').html(element);
-    color = element.split(' ')[0];
-    var nodeToActivate = document.getElementById('nodeToActivateValue');
-    nodeToActivate.style.color = color;
-
-    console2RightValue = key.split('-')[1]
-    $('#wheel4 #cn-button').html(console2RightValue);
-    $('#console2PairResult span').html(key);  
-    console1Pair = ''
-
-    console.info(`Console 1 Pair has only one combo, select it automatically: ${JSON.stringify(element)}`)
-
-    return
-  }
-
-  console.info(`Console 1 has more that 1 combo.`)
-  // Console 1 has more than 1 combos.
-
-  console2Pair =  console2LeftValue + '-' + console2RightValue
-  console.info(`Console2Pair = ${console2Pair}`)
-  $('#console2PairResult span').html(console2Pair);
-
-  if (console2Pair.length > 1 && console2Pair.split('-')[1] !== '') {
-
-    console.info(`Console 2 right value has been clicked, see if there is only one combo with it...`)
-
-    var elementsStartingWithRightValue = 0
-    var lastElementStartingWithRightValue = ''
-    for (let i = 0; i < console1PairKeys.length; i++) {
-      const element = console1PairKeys[i];
-      var elementRightValue = element.split('-')[1]
-      console.info(`Analyzing element: ${JSON.stringify(element)}, right value: ${elementRightValue}...`)
-      if (elementRightValue === console2RightValue) {
-        elementsStartingWithRightValue++
-        lastElementStartingWithRightValue = element
-        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${elementRightValue}.`)
-      }
-    }
-
-    if (elementsStartingWithRightValue === 1) {
-      console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithRightValue}`)
-      console2Pair = lastElementStartingWithRightValue
-      $('#console2PairResult span').html(console2Pair);
-      const element = data[console1Pair][console2Pair]
-      console.info (`Element is ${element}`)
-      $('#nodeToActivateValue').html(element);
-      color = element.split(' ')[0];
-      var nodeToActivate = document.getElementById('nodeToActivateValue');
-      nodeToActivate.style.color = color;
-      
-      return
-    }
-  }
-
-  console.info(`Console 1 pair exists, has more than one combo, and the console 2 left value has more than one combo...`)
-
-  if (!data[console1Pair]) {
-
-  } else {
-    $('#nodeToActivateValue').html('Ok, select next pair.');
-    var nodeToActivate = document.getElementById('nodeToActivateValue');
-    nodeToActivate.style.color = 'green'; 
-
-    if(data[console1Pair][console2Pair]) {
-      console.info("Console 1 Console 2 pair found!")
-      $('#nodeToActivateValue').html(data[console1Pair][console2Pair]);
-      color = data[console1Pair][console2Pair].split(' ')[0];
-      var nodeToActivate = document.getElementById('nodeToActivateValue');
-      nodeToActivate.style.color = color; 
-    } else {
-      console.info("Console 1 Console 2 pair NOT found ;(")
-      $('#nodeToActivateValue').html('Nope');
-      var nodeToActivate = document.getElementById('nodeToActivateValue');
-      nodeToActivate.style.color = 'gray'; 
-    }
-  }
-}
-
+$('#wheel4 #cn-wrapper a').click(w3ClickHandler);
 
 
 
