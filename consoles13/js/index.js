@@ -255,11 +255,11 @@ function result() {
     for (let i = 0; i < console1PairKeys.length; i++) {
       const element = console1PairKeys[i];
       var elementLeftValue = element.split('-')[0]
-      console.info(`Analyzing element: ${JSON.stringify(element)}, left value: ${elementLeftValue}...`)
-      if (elementLeftValue === console3RightValue  ) {
+      console.info(`Analyzing element: ${JSON.stringify(element)}, left value: ${console3LeftValue}...`)
+      if (elementLeftValue === console3LeftValue  ) {
         elementsStartingWithLeftValue++
         lastElementStartingWithLeftValue = element
-        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${elementLeftValue  }.`)
+        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${console3LeftValue  }.`)
       }
     }
 
