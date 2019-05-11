@@ -148,9 +148,13 @@ function wheel1Clicked()
 
 function wheel2Clicked() {
   // Clear third wheel
-  for (let i = 1; i < 12; i++) {
+  for (let i = 1; i <= 12; i++) {
     $('#c1w4li'+i).addClass("overlay")
   }
+  $('#wheel4 #cn-wrapper a').removeClass('active');
+  console2RightValue = ''
+  $('#wheel4 #cn-button').html(console2RightValue);
+  $('#console2PairResult span').html('-');
 
   result()
 }
@@ -158,7 +162,6 @@ function wheel2Clicked() {
 function wheel4Clicked() {
   result()
 }
-
 
 function c1w1ClickHandler(event) {
   console1LeftValue = $(this).attr("data-number");
