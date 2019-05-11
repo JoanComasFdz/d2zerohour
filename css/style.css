@@ -1,23 +1,48 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-* { 
-  position: relative;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+body {
+	background: #111;
+	color: #EEE;
+	font-family: 'Kanit', sans-serif;
 }
 
-html,
-body {
-	height: 100%;
-	font-family: 'Lato', Arial, sans-serif;
+a {
+	color:yellow;
 }
 
-body {
-	background: #1E1E1E;
-	color: #fff;
+a:hover {
+	color:lightyellow;;
+}
+
+/*MENU*/
+.nav {
+	background-color:#333;
+	border-bottom:2px solid #000;
+	margin:5px 0 20px 0;
+}
+
+.nav {
+	background-color:#333;
+	border-bottom:2px solid #000;
+	margin:5px 0 20px 0;
+}
+
+.nav-tabs a{
+	color:#EEE;
+	text-transform: uppercase;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color:yellow;
+    background-color: #000;
+	border-color:transparent transparent yellow;
+	border-radius:none;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .center {
@@ -25,48 +50,31 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
-  }
+}
 
 h1 {
+	display:block;
+	width:100%;
 	margin:0;
-	padding:5px;
+	padding:0;
+	text-align:center;
 	color: white;
-	background: black;
 	font-size:24px;
 }
 
-.container {
-	max-width:980px;
-	margin:0 auto;
-}
-
-.group {
-	position:relative;
-	
-}
-
 .group .component {
-	position: relative;
-	width:50%;
-	height:19em;
-	top:-9em;
-	background: rgba(0,0,0,0.05);	
-}
-
-#wheel1.component,
-#wheel3.component {
-  float:left;
+	height:340px;
+	top:-80px;
 }
 
 #wheel2.component,
 #wheel4.component {	
-	top:-7em;
-	float:right;
+	top:-40px;	
 }
 
 .cn-button {
 	position: absolute;
-	top: 100%;
+	top: 50%;
 	left: 50%;
 	z-index: 11;
 	margin-top: -2em;
@@ -87,9 +95,9 @@ h1 {
 	-webkit-backface-visibility: hidden;
 }
 
-.csstransforms .cn-wrapper {
+.cn-wrapper {
 	position: absolute;
-	top: 100%;
+	top: 50%;
 	left: 50%;
 	z-index: 10;
 	margin-top: -13em;
@@ -98,13 +106,16 @@ h1 {
 	height: 27em;
 	border-radius: 50%;
 	background: transparent;
-	opacity: 0;
-	pointer-events: none;
 	overflow: hidden;
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	pointer-events: none;
 }
 
-/*cover to prevent extra space of anchors from being clickable*/
-.csstransforms .cn-wrapper:after{
+.cn-wrapper:after{
   content:".";
   display:block;
   font-size:2em;
@@ -120,19 +131,9 @@ h1 {
   color: transparent;
 }
 
-.csstransforms .opened-nav {
-	border-radius: 50%;
-	opacity: 1;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	transform: scale(1);
-	pointer-events: auto;
-}
-
-.csstransforms .cn-wrapper li {
+.cn-wrapper li {
 	position: absolute;
-	top: 50%;
+	top: 0;
 	left: 50%;
 	overflow: hidden;
 	margin-top: 0.85em;
@@ -147,15 +148,15 @@ h1 {
 }
 
 .overlay {
-    width:100%;
-    height:100%;
-    position:absolute;
-    background-color:#000;
-    opacity:0.15;
-    border-radius:30px;
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:#000;
+	opacity:0.15;
+	border-radius:30px;
 }
 
-.csstransforms .cn-wrapper li a {
+.cn-wrapper li a {
 	position: absolute;
 	right: -7.25em;
 	bottom: -7.25em;
@@ -163,7 +164,7 @@ h1 {
 	width: 14.5em;
 	height: 14.5em;
 	border-radius: 50%;
-	background: #429a67;
+	background: #00CCDD;
 	background: -webkit-radial-gradient(transparent 35%, #00CCDD 35%);
 	background: -moz-radial-gradient(transparent 35%, #00CCDD 35%);
 	background: radial-gradient(transparent 35%, #00CCDD 35%);
@@ -172,16 +173,17 @@ h1 {
 	text-decoration: none;
 	font-size: 1.2em;
 	line-height: 2;
-	-webkit-transform: skew(-62deg) rotate(-75deg) scale(0.9);
-	-moz-transform: skew(-62deg) rotate(-75deg) scale(0.9);
-	-ms-transform: skew(-62deg) rotate(-75deg) scale(0.9);
-	transform: skew(-62deg) rotate(-75deg) scale(0.9);
+	-webkit-transform: skew(-62deg) rotate(-75deg) scale(1);
+	-moz-transform: skew(-62deg) rotate(-75deg) scale(1);
+	-ms-transform: skew(-62deg) rotate(-75deg) scale(1);
+	transform: skew(-62deg) rotate(-75deg) scale(1);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	pointer-events: auto;
+	border:5px solid #000;
 }
 
-.csstransforms .cn-wrapper li a span {
+.cn-wrapper li a span {
 	position: relative;
 	top: 0.8em;
 	display: block;
@@ -190,223 +192,192 @@ h1 {
 	text-transform: uppercase;
 }
 
-.csstransforms .cn-wrapper li a:hover,
-.csstransforms .cn-wrapper li a:focus {
-	background: -webkit-radial-gradient(transparent 35%, #FFFF00 35%);
-	background: -moz-radial-gradient(transparent 35%, #FFFF00 35%);
-	background: radial-gradient(transparent 35%, #FFFF00 35%);
+.cn-wrapper li a:hover,
+.cn-wrapper li a:focus {
+	background: #FFFF88;
   color:#000;
 }
 
-.csstransforms .cn-wrapper li a.active {
-	background:#FFFF00;
-  color:#000;
+.cn-wrapper li a.active {
+	background: #FFFF00;
+	background-size: 400% 400%;
+	animation: glowing 2000ms infinite;
+	color:#000;
+	border:5px solid #FFFF88;
 }
 
-.csstransforms .opened-nav li:first-child {
+.cn-wrapper li:first-child {
 	-webkit-transform: skew(62deg);
 	-moz-transform: skew(62deg);
 	-ms-transform: skew(62deg);
 	transform: skew(62deg); 
 }
-.csstransforms .opened-nav li:first-child a span{
+.cn-wrapper li:first-child a span{
 	-webkit-transform: rotate(75deg);
 	-moz-transform: rotate(75deg);
 	-ms-transform: rotate(75deg);
 	transform: rotate(75deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(2) {
+.cn-wrapper li:nth-child(2) {
 	-webkit-transform: rotate(30deg) skew(62deg);
 	-moz-transform: rotate(30deg) skew(62deg);
 	-ms-transform: rotate(30deg) skew(62deg);
 	transform: rotate(30deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(2) a span{
+
+.cn-wrapper li:nth-child(2) a span{
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg); 
 }
 
-.csstransforms .opened-nav  li:nth-child(3) {
+.cn-wrapper  li:nth-child(3) {
 	-webkit-transform: rotate(60deg) skew(62deg);
 	-moz-transform: rotate(60deg) skew(62deg);
 	-ms-transform: rotate(60deg) skew(62deg);
 	transform: rotate(60deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(3) a span{
+
+.cn-wrapper li:nth-child(3) a span{
 	-webkit-transform: rotate(15deg);
 	-moz-transform: rotate(15deg);
 	-ms-transform: rotate(15deg);
 	transform: rotate(15deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(4) {
+.cn-wrapper li:nth-child(4) {
 	-webkit-transform: rotate(90deg) skew(62deg);
 	-moz-transform: rotate(90deg) skew(62deg);
 	-ms-transform: rotate(90deg) skew(62deg);
 	transform: rotate(90deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(4) a span{
+
+.cn-wrapper li:nth-child(4) a span{
 	-webkit-transform: rotate(-15deg);
 	-moz-transform: rotate(-15deg);
 	-ms-transform: rotate(-15deg);
 	transform: rotate(-15deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(5) {
+.cn-wrapper li:nth-child(5) {
 	-webkit-transform: rotate(120deg) skew(62deg);
 	-moz-transform: rotate(120deg) skew(62deg);
 	-ms-transform: rotate(120deg) skew(62deg);
 	transform: rotate(120deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(5) a span{
+
+.cn-wrapper li:nth-child(5) a span{
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(6) {
+.cn-wrapper li:nth-child(6) {
 	-webkit-transform: rotate(150deg) skew(62deg);
 	-moz-transform: rotate(150deg) skew(62deg);
 	-ms-transform: rotate(150deg) skew(62deg);
 	transform: rotate(150deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(6) a span{
+
+.cn-wrapper li:nth-child(6) a span{
 	-webkit-transform: rotate(-75deg);
 	-moz-transform: rotate(-75deg);
 	-ms-transform: rotate(-75deg);
 	transform: rotate(-75deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(7) {
+.cn-wrapper li:nth-child(7) {
 	-webkit-transform: rotate(180deg) skew(62deg);
 	-moz-transform: rotate(180deg) skew(62deg);
 	-ms-transform: rotate(180deg) skew(62deg);
 	transform: rotate(180deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(7) a span{
+
+.cn-wrapper li:nth-child(7) a span{
 	-webkit-transform: rotate(-110deg);
 	-moz-transform: rotate(-110deg);
 	-ms-transform: rotate(-110deg);
 	transform: rotate(-110deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(8) {
+.cn-wrapper li:nth-child(8) {
 	-webkit-transform: rotate(210deg) skew(62deg);
 	-moz-transform: rotate(210deg) skew(62deg);
 	-ms-transform: rotate(210deg) skew(62deg);
 	transform: rotate(210deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(8) a span{
+
+.cn-wrapper li:nth-child(8) a span{
 	-webkit-transform: rotate(-135deg);
 	-moz-transform: rotate(-135deg);
 	-ms-transform: rotate(-135deg);
 	transform: rotate(-135deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(9) {
+.cn-wrapper li:nth-child(9) {
 	-webkit-transform: rotate(240deg) skew(62deg);
 	-moz-transform: rotate(240deg) skew(62deg);
 	-ms-transform: rotate(240deg) skew(62deg);
 	transform: rotate(240deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(9) a span{
+
+.cn-wrapper li:nth-child(9) a span{
 	-webkit-transform: rotate(-170deg);
 	-moz-transform: rotate(-170deg);
 	-ms-transform: rotate(-170deg);
 	transform: rotate(-170deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(10) {
+.cn-wrapper li:nth-child(10) {
 	-webkit-transform: rotate(270deg) skew(62deg);
 	-moz-transform: rotate(270deg) skew(62deg);
 	-ms-transform: rotate(270deg) skew(62deg);
 	transform: rotate(270deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(10) a span{
+
+.cn-wrapper li:nth-child(10) a span{
 	-webkit-transform: rotate(1650deg);
 	-moz-transform: rotate(165deg);
 	-ms-transform: rotate(165deg);
 	transform: rotate(165deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(11) {
+.cn-wrapper li:nth-child(11) {
 	-webkit-transform: rotate(300deg) skew(62deg);
 	-moz-transform: rotate(300deg) skew(62deg);
 	-ms-transform: rotate(300deg) skew(62deg);
 	transform: rotate(300deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(11) a span{
+
+.cn-wrapper li:nth-child(11) a span{
 	-webkit-transform: rotate(135deg);
 	-moz-transform: rotate(135deg);
 	-ms-transform: rotate(135deg);
 	transform: rotate(135deg); 
 }
 
-.csstransforms .opened-nav li:nth-child(12) {
+.cn-wrapper li:nth-child(12) {
 	-webkit-transform: rotate(330deg) skew(62deg);
 	-moz-transform: rotate(330deg) skew(62deg);
 	-ms-transform: rotate(330deg) skew(62deg);
 	transform: rotate(330deg) skew(62deg);
 }
-.csstransforms .opened-nav li:nth-child(12) a span{
+.cn-wrapper li:nth-child(12) a span{
 	-webkit-transform: rotate(100deg);
 	-moz-transform: rotate(100deg);
 	-ms-transform: rotate(100deg);
 	transform: rotate(100deg); 
 }
 
-.no-csstransforms .cn-wrapper {
-	overflow: hidden;
-	margin: 10em auto;
-	padding: .5em;
-	text-align: center;
-}
-
-.no-csstransforms .cn-wrapper ul {
-	display: inline-block;
-}
-
-.no-csstransforms .cn-wrapper li {
-	float: left;
-	width: 5em;
-	height: 5em;
-	background-color: #fff;
-	text-align: center;
-	font-size: 1em;
-	line-height: 5em;
-}
-
-.no-csstransforms .cn-wrapper li a {
-	display: block;
-	width: 100%;
-	height: 100%;
-	color: inherit;
-	text-decoration: none;
-}
-
-.no-csstransforms .cn-wrapper li a:hover,
-.no-csstransforms .cn-wrapper li a:active,
-.no-csstransforms .cn-wrapper li a:focus {
-	background-color: #f8f8f8;
-}
-
-.no-csstransforms .cn-wrapper li.active a{
-	background-color: #6F325C;
-	color: #fff;
-}
-
-.no-csstransforms .cn-button {
-	display: none;
-}
-
 #console1PairResult,
 #console2PairResult,
 #console3PairResult,
 #nodeToActivate {
+  display:block;
+  width:100%;
   position:relative;
   text-align:center;
 }
@@ -419,27 +390,22 @@ h1 {
   display:block;
   text-align:center; 
   color:White;
-  font-size:3em;
+  font-size:2em;
   font-weight:700;
+  width:100%;
 }
 
+#nodeToActivate {
+	top:-20px;
+}
 
 #nodeToActivate span {
 	color:darkgray;
-	font-size:4em;
-	padding:0.5em 0
+	font-size:3em;
+	background-color:#222;
+	text-transform:uppercase;
+	box-shadow:0 0 1px yellow;
 }
-
-footer h2 {
-	font-size:1.2em;
-}
-footer p{
-	font-size:0.8em;
-}
-footer p a{
-	color:yellow;
-}
-
 
 @media only screen and (max-width: 620px) {
 	.no-csstransforms li {
@@ -478,4 +444,11 @@ footer p a{
 		height: 3em;
 		line-height: 3em;
 	}
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #FFFF00; }
+  40% { box-shadow: 0 0 20px #FFFF00; }
+  60% { box-shadow: 0 0 20px #FFFF00; }
+  100% { box-shadow: 0 0 -10px #FFFF00; }
 }
