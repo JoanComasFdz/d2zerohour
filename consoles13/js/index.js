@@ -88,7 +88,7 @@ function wheel1Clicked()
   // Clear wheels
   for (let i = 1; i <= 12; i++) {
     $('#c1w2li'+i).addClass("overlay")
-    $('#c1w3li'+i).addClass("overlay")
+    $('#c3w3li'+i).addClass("overlay")
   }
 
   $('#wheel2 #cn-wrapper a').removeClass('active');
@@ -123,7 +123,7 @@ function wheel1Clicked()
 function wheel2Clicked() {
   // Clear third wheel
   for (let i = 1; i <= 12; i++) {
-    $('#c1w3li'+i).addClass("overlay")
+    $('#c3w3li'+i).addClass("overlay")
   }
   $('#wheel3 #cn-wrapper a').removeClass('active');
   console3LeftValue  = ''
@@ -162,7 +162,7 @@ function c1w2ClickHandler(event) {
   wheel2Clicked();
 }
 
-function c1w3ClickHandler(event) {
+function c3w3ClickHandler(event) {
   console3LeftValue = $(this).attr("data-number");
   console.info(`console 2 wheel3 value ${console3LeftValue}`)
   $('#wheel3 #cn-button').html(console3LeftValue);
@@ -179,7 +179,7 @@ $('#wheel1 #cn-wrapper a').click(c1w1ClickHandler);
 
 $('#wheel2 #cn-wrapper a').click(c1w2ClickHandler);
 
-$('#wheel3 #cn-wrapper a').click(c2w3ClickHandler);
+$('#wheel3 #cn-wrapper a').click(c3w3ClickHandler);
 
 // TERMINAL CALCULATION
 
@@ -202,16 +202,18 @@ function result() {
 
   const console1PairKeys = Object.keys(data[console1Pair])
 
-   // Clear third wheel
-   for (let i = 1; i < 12; i++) {
-    $('#c1w3li'+i).addClass("overlay")
+  // Clear third wheel since wheel 1 and wheel 2 have been clicked.
+  for (let i = 1; i <= 12; i++) {
+    $('#c3w3li'+i).addClass("overlay")
   }
+
+  // Activate in wheel 2 only the items beloning to console 1
   for (let i = 0; i < console1PairKeys.length; i++) {
     const element = console1PairKeys[i];
     console.info(`Analyzing element ${JSON.stringify(element)}...`)
     const leftValue = element.split('-')[0]
     // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-    $('#c1w3li'+leftValue).removeClass("overlay")
+    $('#c3w3li'+leftValue).removeClass("overlay")
     console.info(`Activated ${leftValue}`)
   }
 
@@ -229,7 +231,8 @@ function result() {
 
     console3LeftValue = key.split('-')[0]
     $('#wheel3 #cn-button').html(console3LeftValue);
-    $('#console3PairResult span').html(key);  
+    $('#console3PairResult span').html(key);
+    console1Pair = ''
 
     console.info(`Console 1 Pair has only one combo, select it automatically: ${JSON.stringify(element)}`)
 
@@ -245,7 +248,7 @@ function result() {
 
   if (console3Pair.length > 1 && console3Pair.split('-')[0] !== '')  {
 
-    console.info(`Console 2 left value has been clicked, see if there is only one combo with it...`)
+    console.info(`Console 3 left value has been clicked, see if there is only one combo with it...`)
 
     var elementsStartingWithLeftValue = 0
     var lastElementStartingWithLeftValue = ''
@@ -291,7 +294,7 @@ function result() {
       var nodeToActivate = document.getElementById('nodeToActivateValue');
       nodeToActivate.style.color = color; 
     } else {
-      console.info("Console 1 Console 2 pair NOT found ;(")
+      console.info(`Console 1 Console 3 pair NOT found: ${console1Pair} and ${console3Pair}`)
       $('#nodeToActivateValue').html('Nope');
       var nodeToActivate = document.getElementById('nodeToActivateValue');
       nodeToActivate.style.color = 'gray'; 
