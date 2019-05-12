@@ -1,4 +1,3 @@
-
 var combosCsv = `1-1,2-12,8-10,White1
 1-1,4-5,6-5,Red2
 1-2,1-4,11-4,Red1
@@ -48,26 +47,3 @@ var combosCsv = `1-1,2-12,8-10,White1
 12-2,11-4,2-11,Cyan5
 12-5,7-1,5-7,White4
 12-5,12-11,4-4,Blue1`
-
-// PARSE CSV
-var data = {}
-var combos = combosCsv.split(/\r\n|\n/);
-for (let i = 0; i < combos.length; i++) {
-  const element = combos[i];
-  const values = element.split(',')
-
-  const color = values[3].substring(0, values[3].length-1)
-
-  const countToNumber = values[3].length-1
-  const number = values[3][countToNumber]
-
-  const terminal = color + ' ' + number
-
-  if (!data[values[0]])
-  {
-    data[values[0]] = {}
-  }
-  data[values[0]][values[1]] = terminal
-}
-
-console.info(data) // The array looks like: data['1-2']['3-4'] = 'White 1'
