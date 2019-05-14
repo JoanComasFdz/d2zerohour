@@ -30,7 +30,7 @@ function wheel1Clicked()
 
   $('#console13 #console3PairResult span').html('-');
 
-  const console1Keys = Object.keys(dataForConsoles1And2)
+  const console1Keys = Object.keys(dataForConsoles1And3)
   for (let i = 0; i < console1Keys.length; i++) {
     const element = console1Keys[i];
     console.info(`Analyzing element ${JSON.stringify(element)} for left value ${console1LeftValue}`)
@@ -119,7 +119,7 @@ function result() {
   console.info(`Console1Pair = ${console1Pair}`)
   $('#console13 #console1PairResult span').html(console1Pair);  
 
-  if (!dataForConsoles1And2[console1Pair]) {
+  if (!dataForConsoles1And3[console1Pair]) {
     console.info("Console 1 pair NOT found ;(")
     $('#console13 #nodeToActivateValue').html('Nope');
     var nodeToActivate = $('#console13 nodeToActivateValue');
@@ -129,9 +129,9 @@ function result() {
     return
   }
 
-  console.info(`Console 1 pair found!: ${JSON.stringify(dataForConsoles1And2[console1Pair])}`)
+  console.info(`Console 1 pair found!: ${JSON.stringify(dataForConsoles1And3[console1Pair])}`)
 
-  const console1PairKeys = Object.keys(dataForConsoles1And2[console1Pair])
+  const console1PairKeys = Object.keys(dataForConsoles1And3[console1Pair])
 
   // Clear third wheel since wheel 1 and wheel 2 have been clicked.
   for (let i = 1; i <= 12; i++) {
@@ -153,7 +153,7 @@ function result() {
     // Only one possibility found under console1Pair, so no need to search further,
     // just use that one.
     const key = console1PairKeys[0]
-    const element = dataForConsoles1And2[console1Pair][key]
+    const element = dataForConsoles1And3[console1Pair][key]
     console.info(`There is only one possible combo, so lets print this: ${JSON.stringify(element)}`)
     $('#console13 #nodeToActivateValue').html(element);
     color = element.split(' ')[0];
@@ -198,7 +198,7 @@ function result() {
       console.info (`There is only 1 combo startgin with ${console3RightValue  }!, select it automatically: ${lastElementStartingWithLeftValue}`)
       console3Pair = lastElementStartingWithLeftValue
       $('#console13 #console3PairResult span').html(console3Pair);
-      const element = dataForConsoles1And2[console1Pair][console3Pair]
+      const element = dataForConsoles1And3[console1Pair][console3Pair]
       console.info (`Element is ${element}`)
       $('#console13 #nodeToActivateValue').html(element);
       color = element.split(' ')[0];
@@ -211,17 +211,17 @@ function result() {
 
   console.info(`Console 1 pair exists, has more than one combo, and the console 2 left value has more than one combo...`)
 
-  if (!dataForConsoles1And2[console1Pair]) {
+  if (!dataForConsoles1And3[console1Pair]) {
 
   } else {
     $('#console13 #nodeToActivateValue').html('Ok, select next pair.');
     var nodeToActivate = $('#console13 #nodeToActivateValue');
     $('#console13 #nodeToActivateValue').css('color', 'green'); 
 
-    if(dataForConsoles1And2[console1Pair][console3Pair]) {
+    if(dataForConsoles1And3[console1Pair][console3Pair]) {
       console.info("Console 1 Console 2 pair found!")
-      $('#console13 #nodeToActivateValue').html(dataForConsoles1And2[console1Pair][console3Pair]);
-      color = dataForConsoles1And2[console1Pair][console3Pair].split(' ')[0];
+      $('#console13 #nodeToActivateValue').html(dataForConsoles1And3[console1Pair][console3Pair]);
+      color = dataForConsoles1And3[console1Pair][console3Pair].split(' ')[0];
       var nodeToActivate = $('#console13 #nodeToActivateValue');
       $('#console13 #nodeToActivateValue').css('color', color);
     } else {
