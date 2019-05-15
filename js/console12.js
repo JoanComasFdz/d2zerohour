@@ -9,7 +9,7 @@ var console1RightValue = ``
 var console2LeftValue = ``
 var console2RightValue = ``
 
-const dataForConsoles1And2 = parseCSVForConsole1And(2)
+var dataForConsoles1And2 = parseCSVForConsole1And(2)
 
 // DEFINE CLICK HANDLERS
 
