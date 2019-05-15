@@ -13,56 +13,15 @@ const dataForConsoles1And2 = parseCSVForConsole1And(2)
 
 function wheel1Clicked() 
 {
-  // // Clear wheels
-  // for (let i = 1; i <= 12; i++) {
-  //   $('#console12 #c1w2li'+i).addClass("overlay")
-  //   $('#console12 #c1w4li'+i).addClass("overlay")
-  // }
-
-  // $('#console12 #wheel2 #cn-wrapper a').removeClass('active');
-  // $('#console12 #wheel4 #cn-wrapper a').removeClass('active');
-
-  // console1RightValue = ''
-  // console2RightValue = ''
-
-  // $('#console12 #wheel2 #cn-button').html(console1RightValue);
-  // $('#console12 #wheel4 #cn-button').html(console2RightValue);
-
-  // $('#console12 #console2PairResult span').html('-');
-
-  // const console1Keys = Object.keys(dataForConsoles1And2)
-  // for (let i = 0; i < console1Keys.length; i++) {
-  //   const element = console1Keys[i];
-  //   console.info(`Analyzing element ${JSON.stringify(element)} for left value ${console1LeftValue}`)
-  //   if (element.split('-')[0] === console1LeftValue) {
-  //     // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-  //     console.info(`Found that ${element} starts with ${console1LeftValue}...`)
-  //     const rightValue = element.split('-')[1]
-  //     $('#console12 #c1w2li'+rightValue).removeClass("overlay")
-  //     console.info(`Activated ${rightValue}`)
-  //   } else {
-  //     console.info(`Found that ${element} does not start with ${console1LeftValue}  `)
-  //   }
-  // }
-
   findTerminalForWheel1(dataForConsoles1And2, console1LeftValue, false)
 }
 
 function wheel2Clicked() {
-  // Clear third wheel
-  for (let i = 1; i <= 12; i++) {
-    $('#console12 #c1w4li'+i).addClass("overlay")
-  }
-  $('#console12 #wheel4 #cn-wrapper a').removeClass('active');
-  console2RightValue = ''
-  $('#console12 #wheel4 #cn-button').html(console2RightValue);
-  $('#console12 #console2PairResult span').html('-');
-
-  result()
+  findTerminalForWheel2(dataForConsoles1And2, console1LeftValue, console1RightValue, false)
 }
 
 function wheel4Clicked() {
-  result()
+  findTerminalForWheel3(dataForConsoles1And2, console1LeftValue, console1RightValue, console2RightValue, false)
 }
 
 function c1w1ClickHandler(event) {

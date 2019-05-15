@@ -11,47 +11,22 @@ wheel4             -> wheel3
 console1LeftValue -> firstConsoleLeftValue
 */
 
-// There is a click on first wheel.
+// There is a click on second wheel wheel.
 // Oly firstConsoleLeftValue contains a value.
-function findTerminalForWheel1(data, firstConsoleLeftValue, useLeftValueForThirdWheel) {
+function findTerminalForWheel2(data, firstConsoleLeftValue, firstConsoleRightValue, useLeftValueForThirdWheel) {
   const positionWhenSpliting = useLeftValueForThirdWheel ? 0 :  1
   const wheelNumber = useLeftValueForThirdWheel ? 3 : 4
-
-  console.info(`Finding terminal for wheel 1 with third wheel number '${wheelNumber}' and splitting position '${positionWhenSpliting}'...`)
-
-  clearSecondWheel()
-  clearThirdWheel(wheelNumber)
-
-  const matchingRightValuesForFirstConsoleLeftValue = getFirstConsoleRightValuesMatchingTheLeftValue(data, firstConsoleLeftValue)
-
-  activateValuesInSecondWheel(matchingRightValuesForFirstConsoleLeftValue)
-
-  if (matchingRightValuesForFirstConsoleLeftValue.length === 0) {
-    // There is no matching value on the second wheel.
-    // Nothing else to do.
-    console.info(`Finished finding terminal for wheel 1 because the are no matching values on the second wheel.`)
-    return
-  }
-
-  if (matchingRightValuesForFirstConsoleLeftValue.length > 1) {
-    // There is more than 1 matching value on the second wheel.
-    // It needs to be clicked manually.
-    // Nothing else to do.
-    console.info(`Finished finding terminal for wheel 1 because the are '${matchingRightValuesForFirstConsoleLeftValue.length}' values matching on the second wheel. `)
-    return
-  }
-
-  firstConsoleRightValue = matchingRightValuesForFirstConsoleLeftValue[0]
   firstConsolePair = firstConsoleLeftValue + '-' + firstConsoleRightValue
-  console.info(`Found a single pair matching first console left value '${firstConsoleLeftValue}': ${firstConsolePair}`)
-  
-  $('#console1PairResult span').html(firstConsolePair); 
-  $(`#wheel2 #cn-button`).html(firstConsoleRightValue);
+
+  console.info(`Finding terminal for first console pair '${firstConsolePair}' with third wheel number '${wheelNumber}' and splitting position '${positionWhenSpliting}'...`)
+
+  clearThirdWheel(wheelNumber)
 
   // There is no left and right variable naming from now on,
   // since it depends on the parameter positionWhenSpliting
 
   const secondConsolePairs = getSecondConsolePairsForFirstConsolePair(data[firstConsolePair])
+  $('#console1PairResult span').html(firstConsolePair);
 
   activateValuesInThirdWheel(secondConsolePairs, wheelNumber, positionWhenSpliting)
 
@@ -74,7 +49,7 @@ function findTerminalForWheel1(data, firstConsoleLeftValue, useLeftValueForThird
   secondConsoleValue = secondConsolePair.split('-')[positionWhenSpliting]
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
   
-  $('#console2PairResult span').html(firstConsolePair); 
+  $('#console2PairResult span').html(secondConsolePair);
   $(`#wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
 
   const terminal = data[firstConsolePair][secondConsolePair]
