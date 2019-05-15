@@ -1,4 +1,8 @@
+Void
 1) Downlad the csv: https://docs.google.com/spreadsheets/u/1/d/1hl-3OjThGtM0azEC3_pfctBiTw2jFuwMjDsXSWaS9Ng/gviz/tq?tqx=out:csv&sheet=Sorted%20Terminal%20Combos
 2) Copy all text into variable 'combosCsv' in index.js
 3) Replace all " by nothing in that variable.
 4) Refresh index.html 
+
+Arc
+https://docs.google.com/spreadsheets/u/1/d/1PJqjJhbvw2mUF70_h-rUq4ImIuA_TXEJxvZP8kGcwEY/gviz/tq?tqx=out:csv&sheet=Arc%20Configuration%20(Color)
