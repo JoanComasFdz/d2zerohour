@@ -26,6 +26,7 @@ function findTerminalForWheel2(data, firstConsoleLeftValue, firstConsoleRightVal
   // since it depends on the parameter positionWhenSpliting
 
   const secondConsolePairs = getSecondConsolePairsForFirstConsolePair(data[firstConsolePair])
+  $('#console1PairResult span').html(firstConsolePair);
 
   activateValuesInThirdWheel(secondConsolePairs, wheelNumber, positionWhenSpliting)
 
@@ -48,7 +49,7 @@ function findTerminalForWheel2(data, firstConsoleLeftValue, firstConsoleRightVal
   secondConsoleValue = secondConsolePair.split('-')[positionWhenSpliting]
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
   
-  $('#console2PairResult span').html(firstConsolePair); 
+  $('#console2PairResult span').html(secondConsolePair);
   $(`#wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
 
   const terminal = data[firstConsolePair][secondConsolePair]

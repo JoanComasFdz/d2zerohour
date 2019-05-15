@@ -27,7 +27,7 @@ function findTerminalForWheel3(data, firstConsoleLeftValue, firstConsoleRightVal
 
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
     
-  $('#console2PairResult span').html(firstConsolePair); 
+  $('#console2PairResult span').html(secondConsolePair); 
   
   const terminal = data[firstConsolePair][secondConsolePair]
   console.info (`Terminal is ${terminal}`)
