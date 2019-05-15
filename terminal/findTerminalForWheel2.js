@@ -20,7 +20,7 @@ function findTerminalForWheel2(singe, secondConsoleNumber, data, firstConsoleLef
 
   console.info(`Finding terminal for first console pair '${firstConsolePair}' with third wheel number '${wheelNumber}' and splitting position '${positionWhenSpliting}'...`)
 
-  clearThirdWheel(secondConsoleNumber, wheelNumber)
+  clearThirdWheel(singe, secondConsoleNumber, wheelNumber)
 
   // There is no left and right variable naming from now on,
   // since it depends on the parameter positionWhenSpliting

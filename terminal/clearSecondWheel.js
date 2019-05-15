@@ -1,4 +1,4 @@
-function clearSecondWheel(secondConsoleNumber) {
+function clearSecondWheel(singe, secondConsoleNumber) {
   // Make second wheel items look deactivated.
   for (let i = 1; i <= 12; i++) {
     $(`#${singe}-console1${secondConsoleNumber} #w2li` + i).addClass("overlay");
@@ -10,4 +10,7 @@ function clearSecondWheel(secondConsoleNumber) {
   $(`#${singe}-console1${secondConsoleNumber} #wheel2 #cn-button`).html(console1RightValue);
   // Reset pair result ?
   $(`#${singe}-console1${secondConsoleNumber} #console1PairResult span`).html(`-`);
+
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).html('Nope');
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).css('color', 'gray')
 }

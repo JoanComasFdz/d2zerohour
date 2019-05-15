@@ -1,4 +1,4 @@
-function clearThirdWheel(secondConsoleNumber, thirdWheelNumber) {
+function clearThirdWheel(singe, secondConsoleNumber, thirdWheelNumber) {
   // Make third wheel items look deactivated.
   for (let i = 1; i <= 12; i++) {
     $(`#${singe}-console1${secondConsoleNumber} #w${thirdWheelNumber}li${i}`).addClass("overlay");
@@ -10,4 +10,8 @@ function clearThirdWheel(secondConsoleNumber, thirdWheelNumber) {
   $(`#${singe}-console1${secondConsoleNumber} #wheel${thirdWheelNumber} #cn-button`).html(``);
   // Reset pair result ?
   $(`#${singe}-console1${secondConsoleNumber} #console2PairResult span`).html(`-`);
+
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).html('Nope');
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).css('color', 'gray')
+  
 }

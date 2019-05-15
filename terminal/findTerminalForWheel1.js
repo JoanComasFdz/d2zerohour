@@ -19,8 +19,8 @@ function findTerminalForWheel1(singe, secondConsoleNumber, data, firstConsoleLef
 
   console.info(`Finding terminal for wheel 1 with third wheel number '${wheelNumber}' and splitting position '${positionWhenSpliting}'...`)
 
-  clearSecondWheel(secondConsoleNumber)
-  clearThirdWheel(secondConsoleNumber, wheelNumber)
+  clearSecondWheel(singe, secondConsoleNumber)
+  clearThirdWheel(singe, secondConsoleNumber, wheelNumber)
 
   const matchingRightValuesForFirstConsoleLeftValue = getFirstConsoleRightValuesMatchingTheLeftValue(data, firstConsoleLeftValue)
 
