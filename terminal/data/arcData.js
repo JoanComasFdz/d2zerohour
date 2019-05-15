@@ -1,3 +1,4 @@
+var singe = 'arc'
 var combosCsv = `10-11,3-2,8-7,Green1
 2-9,4-3,2-11,Green2
 2-4,12-10,8-6,Green3
@@ -47,5 +48,3 @@ var combosCsv = `10-11,3-2,8-7,Green1
 6-2,1-7,7-5,Purple5
 2-9,5-9,1-8,Purple6
 8-3,4-9,5-9,Purple7`
-
-console.info(`comboCsv contains arc data.`)

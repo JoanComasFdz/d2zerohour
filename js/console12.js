@@ -1,5 +1,7 @@
+console.info(`Using singe: ${singe}`)
+
 var console1Pair = ''
-var console3Pair = ''
+var console2Pair = ''
 
 var console1LeftValue = ''
 var console1RightValue = ''
@@ -7,35 +9,35 @@ var console1RightValue = ''
 var console2LeftValue = ''
 var console2RightValue = ''
 
-const dataForConsoles1And3 = parseCSVForConsole1And(3)
+const dataForConsoles1And2 = parseCSVForConsole1And(2)
 
 // DEFINE CLICK HANDLERS
 
 function wheel1Clicked() 
 {
-  findTerminalForWheel1('void', 3, dataForConsoles1And3, console1LeftValue, true)
+  findTerminalForWheel1(singe, 2, dataForConsoles1And2, console1LeftValue, false)
 }
 
 function wheel2Clicked() {
-  findTerminalForWheel2('void', 3, dataForConsoles1And3, console1LeftValue, console1RightValue, true)
+  findTerminalForWheel2(singe, 2, dataForConsoles1And2, console1LeftValue, console1RightValue, false)
 }
 
-function wheel3Clicked() {
-  findTerminalForWheel3('void', 3, dataForConsoles1And3, console1LeftValue, console1RightValue, console2LeftValue, true)
+function wheel4Clicked() {
+  findTerminalForWheel3(singe, 2, dataForConsoles1And2, console1LeftValue, console1RightValue, console2RightValue, false)
 }
 
 function c1w1ClickHandler(event) {
   event.preventDefault();
   console1LeftValue = $(this).attr("data-number");
-  $('#console13 #wheel1 #cn-button').html(console1LeftValue);
+  $('#console12 #wheel1 #cn-button').html(console1LeftValue);
 
-  $('#console13 #wheel1 #cn-wrapper a').removeClass('active');
+  $('#console12 #wheel1 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
 
   // Clear temrinal
-  $('#console13 #nodeToActivateValue').html('Nope');
-  var nodeToActivate = $('#console13 #nodeToActivateValue');
-  $('#console13 #nodeToActivateValue').css('color', 'gray');
+  $('#console12 #nodeToActivateValue').html('Nope');
+  var nodeToActivate = $('#console12 #nodeToActivateValue');
+  nodeToActivate.css('color', 'gray');
   
   wheel1Clicked();
 }
@@ -43,35 +45,34 @@ function c1w1ClickHandler(event) {
 function c1w2ClickHandler(event) {
   event.preventDefault();
   console1RightValue = $(this).attr("data-number");
-  $('#console13 #wheel2 #cn-button').html(console1RightValue);
+  $('#console12 #wheel2 #cn-button').html(console1RightValue);
   //
-  $('#console13 #wheel2 #cn-wrapper a').removeClass('active');
+  $('#console12 #wheel2 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');  
   
   wheel2Clicked();
 }
 
-function c3w3ClickHandler(event) {
+function c1w4ClickHandler(event) {
   event.preventDefault();
-  console2LeftValue = $(this).attr("data-number");
-  console.info(`console 2 wheel3 value ${console2LeftValue}`)
-  $('#console13 #wheel3 #cn-button').html(console2LeftValue);
+  console2RightValue = $(this).attr("data-number");
+  console.info(`console 2 wheel4 value ${console2RightValue}`)
+  $('#console12 #wheel4 #cn-button').html(console2RightValue);
   //
-  $('#console13 #wheel3 #cn-wrapper a').removeClass('active');
+  $('#console12 #wheel4 #cn-wrapper a').removeClass('active');
   $(this).addClass('active');
   
-  wheel3Clicked();
+  wheel4Clicked();
 }
 
 // SET CLICK HANDLERS
 
-$('#console13 #wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
+$('#console12 #wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
 
-$('#console13 #wheel2 #cn-wrapper a').click(c1w2ClickHandler);
+$('#console12 #wheel2 #cn-wrapper a').click(c1w2ClickHandler);
 
-$('#console13 #wheel3 #cn-wrapper a').click(c3w3ClickHandler);
+$('#console12 #wheel4 #cn-wrapper a').click(c1w4ClickHandler);
 
-// TERMINAL CALCULATION
 
 
 /*!
