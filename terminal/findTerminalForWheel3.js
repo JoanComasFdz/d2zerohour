@@ -12,7 +12,7 @@ console1LeftValue -> firstConsoleLeftValue
 */
 
 // There is a click on third wheel.
-function findTerminalForWheel3(data, firstConsoleLeftValue, firstConsoleRightValue, secondConsoleValue, useLeftValueForThirdWheel) {
+function findTerminalForWheel3(secondConsoleNumber, data, firstConsoleLeftValue, firstConsoleRightValue, secondConsoleValue, useLeftValueForThirdWheel) {
   const positionWhenSpliting = useLeftValueForThirdWheel ? 0 :  1
   const wheelNumber = useLeftValueForThirdWheel ? 3 : 4
   firstConsolePair = firstConsoleLeftValue + '-' + firstConsoleRightValue
@@ -27,14 +27,14 @@ function findTerminalForWheel3(data, firstConsoleLeftValue, firstConsoleRightVal
 
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
     
-  $('#console2PairResult span').html(secondConsolePair); 
+  $(`#console1${secondConsoleNumber} #console2PairResult span`).html(secondConsolePair); 
   
   const terminal = data[firstConsolePair][secondConsolePair]
   console.info (`Terminal is ${terminal}`)
-  $('#nodeToActivateValue').html(terminal);
+  $(`#console1${secondConsoleNumber} #nodeToActivateValue`).html(terminal);
+  
   color = terminal.split(' ')[0];
-  var nodeToActivate = document.getElementById('nodeToActivateValue');
-  nodeToActivate.style.color = color;
+  $(`#console1${secondConsoleNumber} #nodeToActivateValue`).css('color', color)
 
   return
 }

@@ -13,15 +13,15 @@ const dataForConsoles1And2 = parseCSVForConsole1And(2)
 
 function wheel1Clicked() 
 {
-  findTerminalForWheel1(dataForConsoles1And2, console1LeftValue, false)
+  findTerminalForWheel1(2, dataForConsoles1And2, console1LeftValue, false)
 }
 
 function wheel2Clicked() {
-  findTerminalForWheel2(dataForConsoles1And2, console1LeftValue, console1RightValue, false)
+  findTerminalForWheel2(2, dataForConsoles1And2, console1LeftValue, console1RightValue, false)
 }
 
 function wheel4Clicked() {
-  findTerminalForWheel3(dataForConsoles1And2, console1LeftValue, console1RightValue, console2RightValue, false)
+  findTerminalForWheel3(2, dataForConsoles1And2, console1LeftValue, console1RightValue, console2RightValue, false)
 }
 
 function c1w1ClickHandler(event) {
@@ -70,129 +70,6 @@ $('#console12 #wheel1 #cn-wrapper a').click(c1w1ClickHandler);
 $('#console12 #wheel2 #cn-wrapper a').click(c1w2ClickHandler);
 
 $('#console12 #wheel4 #cn-wrapper a').click(c1w4ClickHandler);
-
-// TERMINAL CALCULATION
-
-function result() {
-  console1Pair =  console1LeftValue + '-' + console1RightValue
-  console.info(`Console1Pair = ${console1Pair}`)
-  $('#console12 #console1PairResult span').html(console1Pair);
-
-  if (!dataForConsoles1And2[console1Pair]) {
-    console.info("Console 1 pair NOT found ;(")
-    $('#console12 #nodeToActivateValue').html('Nope');
-    var nodeToActivate = $('#console12 #nodeToActivateValue');
-    nodeToActivate.css('color', 'gray');
-
-    // Nothing found, no need to continue
-    return
-  }
-
-  console.info(`Console 1 pair found!: ${JSON.stringify(dataForConsoles1And2[console1Pair])}`)
-
-  const console1PairKeys = Object.keys(dataForConsoles1And2[console1Pair])
-
-  // Clear third wheel since wheel 1 and wheel 2 have been clicked.
-  for (let i = 1; i <= 12; i++) {
-    $('#console12 #c1w4li'+i).addClass("overlay")
-  }
-
-  // Activate in wheel 2 only the items beloning to wheel 1
-  for (let i = 0; i < console1PairKeys.length; i++) {
-    const element = console1PairKeys[i];
-    console.info(`Analyzing element ${JSON.stringify(element)}...`)
-    const rightValue = element.split('-')[1]
-    // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-    $('#console12 #c1w4li'+rightValue).removeClass("overlay")
-    console.info(`Activated ${rightValue}`)
-  }
-
-  if(console1PairKeys.length == 1)
-  {
-    // Only one possibility found under console1Pair, so no need to search further,
-    // just use that one.
-    const key = console1PairKeys[0]
-    const element = dataForConsoles1And2[console1Pair][key]
-    console.info(`There is only one possible combo, so lets print this: ${JSON.stringify(element)}`)
-    $('#console12 #nodeToActivateValue').html(element);
-    color = element.split(' ')[0];
-    var nodeToActivate = $('#console12 #nodeToActivateValue');
-    nodeToActivate.css('color', color);
-
-    console2RightValue = key.split('-')[1]
-    $('#console12 #wheel4 #cn-button').html(console2RightValue);
-    $('#console12 #console2PairResult span').html(key);  
-    console1Pair = ''
-
-    console.info(`Console 1 Pair has only one combo, select it automatically: ${JSON.stringify(element)}`)
-
-    return
-  }
-
-  console.info(`Console 1 has more that 1 combo.`)
-  // Console 1 has more than 1 combos.
-
-  console2Pair =  console2LeftValue + '-' + console2RightValue
-  console.info(`Console2Pair = ${console2Pair}`)
-  $('#console12 #console2PairResult span').html(console2Pair);
-
-  if (console2Pair.length > 1 && console2Pair.split('-')[1] !== '') {
-
-    console.info(`Console 2 right value has been clicked, see if there is only one combo with it...`)
-
-    var elementsStartingWithRightValue = 0
-    var lastElementStartingWithRightValue = ''
-    for (let i = 0; i < console1PairKeys.length; i++) {
-      const element = console1PairKeys[i];
-      var elementRightValue = element.split('-')[1]
-      console.info(`Analyzing element: ${JSON.stringify(element)}, right value: ${elementRightValue}...`)
-      if (elementRightValue === console2RightValue) {
-        elementsStartingWithRightValue++
-        lastElementStartingWithRightValue = element
-        console.info(`Yes, element: ${JSON.stringify(element)} starts with ${elementRightValue}.`)
-      }
-    }
-
-    if (elementsStartingWithRightValue === 1) {
-      console.info (`There is only 1 combo startgin with ${console2LeftValue}!, select it automatically: ${lastElementStartingWithRightValue}`)
-      console2Pair = lastElementStartingWithRightValue
-      $('#console12 #console2PairResult span').html(console2Pair);
-      const element = dataForConsoles1And2[console1Pair][console2Pair]
-      console.info (`Element is ${element}`)
-      $('#console12 #nodeToActivateValue').html(element);
-      color = element.split(' ')[0];
-      var nodeToActivate = $('#console12 #nodeToActivateValue');
-    nodeToActivate.css('color', color);
-      
-      return
-    }
-  }
-
-  console.info(`Console 1 pair exists, has more than one combo, and the console 2 left value has more than one combo...`)
-
-  if (!dataForConsoles1And2[console1Pair]) {
-
-  } else {
-    $('#console12 #nodeToActivateValue').html('Ok, select next pair.');
-    var nodeToActivate = $('#console12 #nodeToActivateValue');
-    nodeToActivate.css('color', 'green'); 
-
-    if(dataForConsoles1And2[console1Pair][console2Pair]) {
-      console.info("Console 1 Console 2 pair found!")
-      $('#console12 #nodeToActivateValue').html(dataForConsoles1And2[console1Pair][console2Pair]);
-      color = dataForConsoles1And2[console1Pair][console2Pair].split(' ')[0];
-      var nodeToActivate = $('#console12 #nodeToActivateValue');
-    nodeToActivate.css('color', color); 
-    } else {
-      console.info("Console 1 Console 2 pair NOT found ;(")
-      $('#console12 #nodeToActivateValue').html('Nope');
-      var nodeToActivate = $('#console12 #nodeToActivateValue');
-      nodeToActivate.css('color', 'gray'); 
-    }
-  }
-}
-
-
 
 
 

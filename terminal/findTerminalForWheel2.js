@@ -13,20 +13,20 @@ console1LeftValue -> firstConsoleLeftValue
 
 // There is a click on second wheel wheel.
 // Oly firstConsoleLeftValue contains a value.
-function findTerminalForWheel2(data, firstConsoleLeftValue, firstConsoleRightValue, useLeftValueForThirdWheel) {
+function findTerminalForWheel2(secondConsoleNumber, data, firstConsoleLeftValue, firstConsoleRightValue, useLeftValueForThirdWheel) {
   const positionWhenSpliting = useLeftValueForThirdWheel ? 0 :  1
   const wheelNumber = useLeftValueForThirdWheel ? 3 : 4
   firstConsolePair = firstConsoleLeftValue + '-' + firstConsoleRightValue
 
   console.info(`Finding terminal for first console pair '${firstConsolePair}' with third wheel number '${wheelNumber}' and splitting position '${positionWhenSpliting}'...`)
 
-  clearThirdWheel(wheelNumber)
+  clearThirdWheel(secondConsoleNumber, wheelNumber)
 
   // There is no left and right variable naming from now on,
   // since it depends on the parameter positionWhenSpliting
 
   const secondConsolePairs = getSecondConsolePairsForFirstConsolePair(data[firstConsolePair])
-  $('#console1PairResult span').html(firstConsolePair);
+  $(`#console1${secondConsoleNumber} #console1PairResult span`).html(firstConsolePair);
 
   activateValuesInThirdWheel(secondConsolePairs, wheelNumber, positionWhenSpliting)
 
@@ -49,15 +49,15 @@ function findTerminalForWheel2(data, firstConsoleLeftValue, firstConsoleRightVal
   secondConsoleValue = secondConsolePair.split('-')[positionWhenSpliting]
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
   
-  $('#console2PairResult span').html(secondConsolePair);
-  $(`#wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
+  $(`#console1${secondConsoleNumber} #console2PairResult span`).html(secondConsolePair);
+  $(`#console1${secondConsoleNumber} #wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
 
   const terminal = data[firstConsolePair][secondConsolePair]
   console.info (`Terminal is ${terminal}`)
-  $('#nodeToActivateValue').html(terminal);
+  $(`#console1${secondConsoleNumber} #nodeToActivateValue`).html(terminal);
+  
   color = terminal.split(' ')[0];
-  var nodeToActivate = document.getElementById('nodeToActivateValue');
-  nodeToActivate.style.color = color;
+  $(`#console1${secondConsoleNumber} #nodeToActivateValue`).css('color', color)
 
   return
 }
