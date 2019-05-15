@@ -50,4 +50,17 @@ $('#solar-tab').click(function(e) {
   }).remove();
   $.getScript("terminal/data/solarData.js");
 });
-// ToDo: add console tab clicks
+
+$('#solar-console13-tab').click(function(e) {
+  $('html').find('script').filter(function(){
+    return $(this).attr('src') === "js/console12.js"
+  }).remove();
+  $.getScript("js/console13.js");
+});
+
+$('#solar-console12-tab').click(function(e) {
+  $('html').find('script').filter(function(){
+    return $(this).attr('src') === "js/console13.js"
+  }).remove();
+  $.getScript("js/console12.js");
+});
