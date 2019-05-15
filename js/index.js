@@ -16,19 +16,19 @@ $('#void-tab').click(function(e) {
   $('html').find('script').filter(function(){
     return $(this).attr('src') === "terminal/voidData.js"
   }).remove();
-  $.getScript("terminal/voidData.js");
+  $.getScript("terminal/data/voidData.js");
 });
 
 $('#arc-tab').click(function(e) {
   $('html').find('script').filter(function(){
     return $(this).attr('src') === "terminal/arcData.js"
   }).remove();
-  $.getScript("terminal/arcData.js");
+  $.getScript("terminal/data/arcData.js");
 });
 
 $('#solar-tab').click(function(e) {
   $('html').find('script').filter(function(){
     return $(this).attr('src') === "terminal/solarData.js"
   }).remove();
-  $.getScript("terminal/solarData.js");
+  $.getScript("terminal/data/solarData.js");
 });
