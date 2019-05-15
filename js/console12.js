@@ -17,20 +17,11 @@ function wheel1Clicked()
 }
 
 function wheel2Clicked() {
-  // Clear third wheel
-  for (let i = 1; i <= 12; i++) {
-    $('#console12 #c1w4li'+i).addClass("overlay")
-  }
-  $('#console12 #wheel4 #cn-wrapper a').removeClass('active');
-  console2RightValue = ''
-  $('#console12 #wheel4 #cn-button').html(console2RightValue);
-  $('#console12 #console2PairResult span').html('-');
-
-  result()
+  findTerminalForWheel2(dataForConsoles1And2, console1LeftValue, console1RightValue, false)
 }
 
 function wheel4Clicked() {
-  result()
+  findTerminalForWheel3(dataForConsoles1And2, console1LeftValue, console1RightValue, console2RightValue, false)
 }
 
 function c1w1ClickHandler(event) {
