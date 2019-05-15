@@ -452,3 +452,9 @@ h1 {
   60% { box-shadow: 0 0 20px #FFFF00; }
   100% { box-shadow: 0 0 -10px #FFFF00; }
 }
+
+@media (max-width: 769px) {
+	.container {
+			max-width: 100%;
+	}
+} 
