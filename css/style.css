@@ -487,7 +487,20 @@ h1 {
 }
 
 @media (max-width:998px) {
+	body {
+		overflow-x:hidden;
+	}
 	.container {
 		max-width:100%;
+		padding-right: 0;
+    	padding-left: 0;
+	}
+	.container p {
+		padding:0 25px;
+		font-size:2.5em;
+	}
+	.nav-tabs a {
+		padding: 15px 0;
+		font-size:1.5em;
 	}
 }
