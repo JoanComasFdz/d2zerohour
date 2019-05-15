@@ -13,39 +13,7 @@ const dataForConsoles1And3 = parseCSVForConsole1And(3)
 
 function wheel1Clicked() 
 {
-  // Clear wheels
-  for (let i = 1; i <= 12; i++) {
-    $('#console13 #c1w2li'+i).addClass("overlay")
-    $('#console13 #c3w3li'+i).addClass("overlay")
-  }
-
-  $('#console13 #wheel2 #cn-wrapper a').removeClass('active');
-  $('#console13 #wheel3 #cn-wrapper a').removeClass('active');
-
-  console1RightValue = ''
-  console3LeftValue  = ''
-
-  $('#console13 #wheel2 #cn-button').html(console1RightValue);
-  $('#console13 #wheel3 #cn-button').html(console3LeftValue );
-
-  $('#console13 #console3PairResult span').html('-');
-
-  const console1Keys = Object.keys(dataForConsoles1And3)
-  for (let i = 0; i < console1Keys.length; i++) {
-    const element = console1Keys[i];
-    console.info(`Analyzing element ${JSON.stringify(element)} for left value ${console1LeftValue}`)
-    if (element.split('-')[0] === console1LeftValue) {
-      // ACTIVATE POSSIBLE VALUE ON CONSOLE 1 RIGHT WHEEL
-      console.info(`Found that ${element} starts with ${console1LeftValue}...`)
-      const rightValue = element.split('-')[1]
-      $('#console13 #c1w2li'+rightValue).removeClass("overlay")
-      console.info(`Activated ${rightValue}`)
-    } else {
-      console.info(`Found that ${element} does not start with ${console1LeftValue}  `)
-    }
-  }
-
-  result()
+  findTerminalForWheel1(dataForConsoles1And3, console1LeftValue, true)
 }
 
 function wheel2Clicked() {
