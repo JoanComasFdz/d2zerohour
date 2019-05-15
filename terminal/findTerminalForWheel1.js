@@ -45,8 +45,8 @@ function findTerminalForWheel1(singe, secondConsoleNumber, data, firstConsoleLef
   firstConsolePair = firstConsoleLeftValue + '-' + firstConsoleRightValue
   console.info(`Found a single pair matching first console left value '${firstConsoleLeftValue}': ${firstConsolePair}`)
   
-  $(`#${singe}TabContent #console1${secondConsoleNumber} #console1PairResult span`).html(firstConsolePair); 
-  $(`#${singe}TabContent #console1${secondConsoleNumber} #wheel2 #cn-button`).html(firstConsoleRightValue);
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #console1PairResult span`).html(firstConsolePair); 
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #wheel2 #cn-button`).html(firstConsoleRightValue);
 
   // There is no left and right variable naming from now on,
   // since it depends on the parameter positionWhenSpliting
@@ -74,15 +74,15 @@ function findTerminalForWheel1(singe, secondConsoleNumber, data, firstConsoleLef
   secondConsoleValue = secondConsolePair.split('-')[positionWhenSpliting]
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
   
-  $(`#${singe}TabContent #console1${secondConsoleNumber} #console2PairResult span`).html(secondConsolePair); 
-  $(`#${singe}TabContent #console1${secondConsoleNumber} #wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #console2PairResult span`).html(secondConsolePair); 
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
 
   const terminal = data[firstConsolePair][secondConsolePair]
   console.info (`Terminal is ${terminal}`)
-  $(`#${singe}TabContent #console1${secondConsoleNumber} #nodeToActivateValue`).html(terminal);
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).html(terminal);
   
   color = terminal.split(' ')[0];
-  $(`#${singe}TabContent #console1${secondConsoleNumber} #nodeToActivateValue`).css('color', color)
+  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).css('color', color)
   
   return
 }

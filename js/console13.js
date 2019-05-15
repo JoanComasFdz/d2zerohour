@@ -1,13 +1,13 @@
 console.info(`Using singe: ${singe}`)
 
-var console1Pair = ''
-var console3Pair = ''
+var console1Pair = ``
+var console3Pair = ``
 
-var console1LeftValue = ''
-var console1RightValue = ''
+var console1LeftValue = ``
+var console1RightValue = ``
 
-var console2LeftValue = ''
-var console2RightValue = ''
+var console2LeftValue = ``
+var console2RightValue = ``
 
 const dataForConsoles1And3 = parseCSVForConsole1And(3)
 
@@ -29,15 +29,15 @@ function wheel3Clicked() {
 function c1w1ClickHandler(event) {
   event.preventDefault();
   console1LeftValue = $(this).attr("data-number");
-  $('#console13 #wheel1 #cn-button').html(console1LeftValue);
+  $(`#${singe}-console13 #wheel1 #cn-button`).html(console1LeftValue);
 
-  $('#console13 #wheel1 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');  
+  $(`#${singe}-console13 #wheel1 #cn-wrapper a`).removeClass(`active`);
+  $(this).addClass(`active`);  
 
   // Clear temrinal
-  $('#console13 #nodeToActivateValue').html('Nope');
-  var nodeToActivate = $('#console13 #nodeToActivateValue');
-  $('#console13 #nodeToActivateValue').css('color', 'gray');
+  $(`#${singe}-console13 #nodeToActivateValue`).html(`Nope`);
+  var nodeToActivate = $(`#${singe}-console13 #nodeToActivateValue`);
+  $(`#${singe}-console13 #nodeToActivateValue`).css(`color`, `gray`);
   
   wheel1Clicked();
 }
@@ -45,10 +45,10 @@ function c1w1ClickHandler(event) {
 function c1w2ClickHandler(event) {
   event.preventDefault();
   console1RightValue = $(this).attr("data-number");
-  $('#console13 #wheel2 #cn-button').html(console1RightValue);
+  $(`#${singe}-console13 #wheel2 #cn-button`).html(console1RightValue);
   //
-  $('#console13 #wheel2 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');  
+  $(`#${singe}-console13 #wheel2 #cn-wrapper a`).removeClass(`active`);
+  $(this).addClass(`active`);  
   
   wheel2Clicked();
 }
@@ -57,21 +57,21 @@ function c3w3ClickHandler(event) {
   event.preventDefault();
   console2LeftValue = $(this).attr("data-number");
   console.info(`console 2 wheel3 value ${console2LeftValue}`)
-  $('#console13 #wheel3 #cn-button').html(console2LeftValue);
+  $(`#${singe}-console13 #wheel3 #cn-button`).html(console2LeftValue);
   //
-  $('#console13 #wheel3 #cn-wrapper a').removeClass('active');
-  $(this).addClass('active');
+  $(`#${singe}-console13 #wheel3 #cn-wrapper a`).removeClass(`active`);
+  $(this).addClass(`active`);
   
   wheel3Clicked();
 }
 
 // SET CLICK HANDLERS
 
-$('#console13 #wheel1 #cn-wrapper a').click(c1w1ClickHandler);  
+$(`#${singe}-console13 #wheel1 #cn-wrapper a`).click(c1w1ClickHandler);  
 
-$('#console13 #wheel2 #cn-wrapper a').click(c1w2ClickHandler);
+$(`#${singe}-console13 #wheel2 #cn-wrapper a`).click(c1w2ClickHandler);
 
-$('#console13 #wheel3 #cn-wrapper a').click(c3w3ClickHandler);
+$(`#${singe}-console13 #wheel3 #cn-wrapper a`).click(c3w3ClickHandler);
 
 // TERMINAL CALCULATION
 
@@ -80,10 +80,10 @@ $('#console13 #wheel3 #cn-wrapper a').click(c3w3ClickHandler);
  * classie - class helper functions
  * from bonzo https://github.com/ded/bonzo
  * 
- * classie.has( elem, 'my-class' ) -> true/false
- * classie.add( elem, 'my-new-class' )
- * classie.remove( elem, 'my-unwanted-class' )
- * classie.toggle( elem, 'my-class' )
+ * classie.has( elem, `my-class` ) -> true/false
+ * classie.add( elem, `my-new-class` )
+ * classie.remove( elem, `my-unwanted-class` )
+ * classie.toggle( elem, `my-class` )
  */
 
 /*jshint browser: true, strict: true, undef: true */
@@ -91,7 +91,7 @@ $('#console13 #wheel3 #cn-wrapper a').click(c3w3ClickHandler);
 
 ( function( window ) {
 
-'use strict';
+`use strict`;
 
 // class helper functions from bonzo https://github.com/ded/bonzo
 
@@ -100,10 +100,10 @@ function classReg( className ) {
 }
 
 // classList support for class management
-// altho to be fair, the api sucks because it won't accept multiple classes at once
+// altho to be fair, the api sucks because it won`t accept multiple classes at once
 var hasClass, addClass, removeClass;
 
-if ( 'classList' in document.documentElement ) {
+if ( `classList` in document.documentElement ) {
   hasClass = function( elem, c ) {
     return elem.classList.contains( c );
   };
@@ -120,11 +120,11 @@ else {
   };
   addClass = function( elem, c ) {
     if ( !hasClass( elem, c ) ) {
-      elem.className = elem.className + ' ' + c;
+      elem.className = elem.className + ` ` + c;
     }
   };
   removeClass = function( elem, c ) {
-    elem.className = elem.className.replace( classReg( c ), ' ' );
+    elem.className = elem.className.replace( classReg( c ), ` ` );
   };
 }
 
@@ -147,7 +147,7 @@ var classie = {
 };
 
 // transport
-if ( typeof define === 'function' && define.amd ) {
+if ( typeof define === `function` && define.amd ) {
   // AMD
   define( classie );
 } else {
