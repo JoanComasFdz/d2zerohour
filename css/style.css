@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 body {
-	background: #111;
 	color: #EEE;
 	font-family: 'Kanit', sans-serif;
+	background:url("../img/dark_mosaic.png") #000;
 }
 
 a {
@@ -14,43 +14,6 @@ a:hover {
 	color:lightyellow;;
 }
 
-/*MENU*/
-.nav {
-	background-color:#333;
-	border-bottom:2px solid #000;
-	margin:5px 0 20px 0;
-}
-
-.nav {
-	background-color:#333;
-	border-bottom:2px solid #000;
-	margin:5px 0 20px 0;
-}
-
-.nav-tabs a{
-	color:#EEE;
-	text-transform: uppercase;
-}
-
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color:yellow;
-    background-color: #000;
-	border-color:transparent transparent yellow;
-	border-radius:none;
-}
-
-.nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-}
 
 h1 {
 	display:block;
@@ -61,6 +24,68 @@ h1 {
 	color: white;
 	font-size:24px;
 }
+
+/*TABS*/
+.nav {
+	background-color:#333;
+	border-bottom:2px solid #000;
+	margin:0 0 0 0;
+}
+
+.nav-tabs a{
+	color:#EEE;
+	text-transform: uppercase;
+	padding:15px 0;
+	background:url("../img/dark-honeycomb.png") #111;
+	
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color:yellow;
+  background-color: #000;
+	border-color:transparent transparent yellow;
+	border-radius:none;
+}
+
+.nav-tabs .nav-link {
+		border-bottom: 2px solid transparent;
+		border-right:1px dotted #111;
+		border-left:1px dotted #111;
+    border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		
+}
+
+.tab-pane .nav-tabs a{
+	color:#EEE;
+	text-transform: uppercase;
+	padding:15px 0;
+	background-color:#444;
+	background:url("../img/prism.png") #111;	
+}
+
+
+
+
+/*TABS SECOND LEVEL*/
+
+.tab-pane > p {
+	margin-top: 15px;
+}
+
+.tab-pane h1,
+.tab-pane h2 {
+	padding:13px 0;
+	text-transform:uppercase;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
 
 .group .component {
 	height:340px;
@@ -165,9 +190,6 @@ h1 {
 	height: 14.5em;
 	border-radius: 50%;
 	background: #00CCDD;
-	background: -webkit-radial-gradient(transparent 35%, #00CCDD 35%);
-	background: -moz-radial-gradient(transparent 35%, #00CCDD 35%);
-	background: radial-gradient(transparent 35%, #00CCDD 35%);
 	color: #fff;
 	text-align: center;
 	text-decoration: none;
@@ -190,21 +212,31 @@ h1 {
 	font-size: 1em;
 	font-weight: 700;
 	text-transform: uppercase;
+	text-shadow:0 0 3px #000;
+	opacity:1;
 }
 
 .cn-wrapper li a:hover,
 .cn-wrapper li a:focus {
 	background: #FFFF88;
-  color:#000;
+	color:#111;
+	text-shadow:none;
+	transition: all .2s ease-in-out;
 }
 
 .cn-wrapper li a.active {
-	background: #FFFF00;
-	background-size: 400% 400%;
+	background:yellow;
 	animation: glowing 2000ms infinite;
-	color:#000;
 	border:5px solid #FFFF88;
+	transform: skew(-62deg) rotate(-75deg) scale(1.05);
 }
+
+.cn-wrapper li a.active  span {
+	color:#111;
+	text-shadow:0 0 3px #FFF;
+	opacity:0.9;
+}
+
 
 .cn-wrapper li:first-child {
 	-webkit-transform: skew(62deg);
@@ -379,7 +411,7 @@ h1 {
   display:block;
   width:100%;
   position:relative;
-  text-align:center;
+	text-align:center;
 }
 
 #console1PairResult span,
@@ -402,9 +434,10 @@ h1 {
 #nodeToActivate span {
 	color:darkgray;
 	font-size:3em;
-	background-color:#222;
 	text-transform:uppercase;
-	box-shadow:0 0 1px yellow;
+	box-shadow:0 0 2px yellow;
+	background:url("../img/dark-honeycomb.png") #111;
+	text-shadow:0 0 20px #000;
 }
 
 @media only screen and (max-width: 620px) {
@@ -453,8 +486,8 @@ h1 {
   100% { box-shadow: 0 0 -10px #FFFF00; }
 }
 
-@media (max-width: 769px) {
+@media (max-width:998px) {
 	.container {
-			max-width: 100%;
+		max-width:100%;
 	}
-} 
+}
