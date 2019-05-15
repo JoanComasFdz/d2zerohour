@@ -47,3 +47,5 @@ var combosCsv = `1-1,2-12,8-10,White1
 12-2,11-4,2-11,Cyan5
 12-5,7-1,5-7,White4
 12-5,12-11,4-4,Blue1`
+
+console.info(`comboCsv contains void data.`)

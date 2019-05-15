@@ -1,3 +1,10 @@
+$('#console13-tab').click(function(e) {
+  $('html').find('script').filter(function(){
+    return $(this).attr('src') === "js/console12.js"
+  }).remove();
+  $.getScript("js/console13.js");
+});
+
 $('#console12-tab').click(function(e) {
   $('html').find('script').filter(function(){
     return $(this).attr('src') === "js/console13.js"
@@ -5,9 +12,23 @@ $('#console12-tab').click(function(e) {
   $.getScript("js/console12.js");
 });
 
-$('#console13-tab').click(function(e) {
+$('#void-tab').click(function(e) {
   $('html').find('script').filter(function(){
-    return $(this).attr('src') === "js/console12.js"
+    return $(this).attr('src') === "terminal/voidData.js"
   }).remove();
-  $.getScript("js/console13.js");
+  $.getScript("terminal/voidData.js");
+});
+
+$('#arc-tab').click(function(e) {
+  $('html').find('script').filter(function(){
+    return $(this).attr('src') === "terminal/arcData.js"
+  }).remove();
+  $.getScript("terminal/arcData.js");
+});
+
+$('#solar-tab').click(function(e) {
+  $('html').find('script').filter(function(){
+    return $(this).attr('src') === "terminal/solarData.js"
+  }).remove();
+  $.getScript("terminal/solarData.js");
 });
