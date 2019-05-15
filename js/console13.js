@@ -13,15 +13,15 @@ const dataForConsoles1And3 = parseCSVForConsole1And(3)
 
 function wheel1Clicked() 
 {
-  findTerminalForWheel1(3, dataForConsoles1And3, console1LeftValue, true)
+  findTerminalForWheel1('void', 3, dataForConsoles1And3, console1LeftValue, true)
 }
 
 function wheel2Clicked() {
-  findTerminalForWheel2(3, dataForConsoles1And3, console1LeftValue, console1RightValue, true)
+  findTerminalForWheel2('void', 3, dataForConsoles1And3, console1LeftValue, console1RightValue, true)
 }
 
 function wheel3Clicked() {
-  findTerminalForWheel3(3, dataForConsoles1And3, console1LeftValue, console1RightValue, console2LeftValue, true)
+  findTerminalForWheel3('void', 3, dataForConsoles1And3, console1LeftValue, console1RightValue, console2LeftValue, true)
 }
 
 function c1w1ClickHandler(event) {
