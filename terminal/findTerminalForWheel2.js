@@ -28,7 +28,7 @@ function findTerminalForWheel2(singe, secondConsoleNumber, data, firstConsoleLef
   const secondConsolePairs = getSecondConsolePairsForFirstConsolePair(data[firstConsolePair])
   $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #console1PairResult span`).html(firstConsolePair);
 
-  activateValuesInThirdWheel(secondConsolePairs, wheelNumber, positionWhenSpliting)
+  activateValuesInThirdWheel(secondConsoleNumber, secondConsolePairs, wheelNumber, positionWhenSpliting)
 
   if (secondConsolePairs.length === 0) {
     // There is no matching value on the third wheel.
