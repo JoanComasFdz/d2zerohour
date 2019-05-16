@@ -1,3 +1,7 @@
+$(document).ready(function(){
+  $('.nav-tabs').stickyTabs();
+}); 
+
 // VOID
 $('#void-tab').click(function(e) {
   $('html').find('script').filter(function(){

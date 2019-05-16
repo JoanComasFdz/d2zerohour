@@ -96,10 +96,10 @@
             <div class="tab-pane fade" id="void" role="tabpanel" aria-labelledby="void-tab"> <!-- Void Tab -->
                 <ul class="nav nav-fill nav-tabs" id="menu" role="tablist"> <!-- Void Consoles Tab List -->
                     <li class="nav-item">
-                        <a class="nav-link" id="void-console12-tab" data-toggle="tab" href="#void-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
+                        <a class="nav-link" id="void-console12-tab" data-toggle="tab" data-parent="void-tab" href="#void-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="void-console13-tab" data-toggle="tab" href="#void-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
+                      <a class="nav-link" id="void-console13-tab" data-toggle="tab" data-parent="void-tab" href="#void-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
                     </li>
                 </ul> <!-- Void Consoles Tab List -->
 
@@ -343,13 +343,13 @@
             <div class="tab-pane fade" id="arc" role="tabpanel" aria-labelledby="arc-tab"> <!-- Arc Tab -->
               <ul class="nav nav-fill nav-tabs" id="menu" role="tablist"> <!-- Arc Consoles Tab List -->
                 <li class="nav-item">
-                  <a class="nav-link" id="arc-console12-tab" data-toggle="tab" href="#arc-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
+                  <a class="nav-link" id="arc-console12-tab" data-toggle="tab" data-parent="arc-tab" href="#arc-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="arc-console13-tab" data-toggle="tab" href="#arc-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
+                  <a class="nav-link" id="arc-console13-tab" data-toggle="tab" data-parent="arc-tab" href="#arc-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="arc-console23-tab" data-toggle="tab" href="#arc-console23" role="tab" aria-controls="console23" aria-selected="false">Console 2 + 3</a>
+                    <a class="nav-link" id="arc-console23-tab" data-toggle="tab" data-parent="arc-tab" href="#arc-console23" role="tab" aria-controls="console23" aria-selected="false">Console 2 + 3</a>
                   </li>
               </ul> <!-- Arc Consoles Tab List -->
 
@@ -718,10 +718,10 @@
 
                 <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
                   <li class="nav-item">
-                      <a class="nav-link" id="solar-console12-tab" data-toggle="tab" href="#solar-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
+                      <a class="nav-link" id="solar-console12-tab" data-toggle="tab" data-parent="solar-tab" href="#solar-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="solar-console13-tab" data-toggle="tab" href="#solar-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
+                      <a class="nav-link" id="solar-console13-tab" data-toggle="tab" data-parent="solar-tab" href="#solar-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
                     </li>
                 </ul>
     
@@ -982,7 +982,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
     <script  src="terminal/parseCSVForConsole1And.js"></script>
-    <script  src="terminal/parseCSVForConsole2And3.js"></script>
+    <script  src="terminal/parseCSVForConsole2And3.js"></script>    
+    <script  src="js/jquery.stickytabs.js"></script>
     <script  src="js/index.js"></script>
     <script src="terminal/clearSecondWheel.js"></script>
     <script src="terminal/clearThirdWheel.js"></script>
