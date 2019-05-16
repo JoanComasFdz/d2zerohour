@@ -42,6 +42,12 @@ $('#arc-console12-tab').click(function(e) {
   $.getScript("js/console12.js");
 });
 
+$('#arc-console23-tab').click(function(e) {
+  $('html').find('script').filter(function(){
+    return $(this).attr('src') === "js/console23.js"
+  }).remove();
+  $.getScript("js/console23.js");
+});
 
 // SOLAR
 $('#solar-tab').click(function(e) {

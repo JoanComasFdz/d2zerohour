@@ -13,22 +13,22 @@ console1LeftValue -> firstConsoleLeftValue
 
 // There is a click on second wheel wheel.
 // Oly firstConsoleLeftValue contains a value.
-function findTerminalForWheel2(singe, secondConsoleNumber, data, firstConsoleLeftValue, firstConsoleRightValue, useLeftValueForThirdWheel) {
+function findTerminalForWheel2(singe, firstConsoleNumber, secondConsoleNumber, data, firstConsoleLeftValue, firstConsoleRightValue, useLeftValueForThirdWheel) {
   const positionWhenSpliting = useLeftValueForThirdWheel ? 0 :  1
   const wheelNumber = useLeftValueForThirdWheel ? 3 : 4
   firstConsolePair = firstConsoleLeftValue + '-' + firstConsoleRightValue
 
   console.info(`Finding terminal for first console pair '${firstConsolePair}' with third wheel number '${wheelNumber}' and splitting position '${positionWhenSpliting}'...`)
 
-  clearThirdWheel(singe, secondConsoleNumber, wheelNumber)
+  clearThirdWheel(singe, firstConsoleNumber, secondConsoleNumber, wheelNumber)
 
   // There is no left and right variable naming from now on,
   // since it depends on the parameter positionWhenSpliting
 
   const secondConsolePairs = getSecondConsolePairsForFirstConsolePair(data[firstConsolePair])
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #console1PairResult span`).html(firstConsolePair);
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #console${firstConsoleNumber}PairResult span`).html(firstConsolePair);
 
-  activateValuesInThirdWheel(secondConsoleNumber, secondConsolePairs, wheelNumber, positionWhenSpliting)
+  activateValuesInThirdWheel(firstConsoleNumber, secondConsoleNumber, secondConsolePairs, wheelNumber, positionWhenSpliting)
 
   if (secondConsolePairs.length === 0) {
     // There is no matching value on the third wheel.
@@ -49,15 +49,15 @@ function findTerminalForWheel2(singe, secondConsoleNumber, data, firstConsoleLef
   secondConsoleValue = secondConsolePair.split('-')[positionWhenSpliting]
   console.info(`Found a single pair in the second console matching first console pair '${firstConsolePair}': ${secondConsolePair}`)
   
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #console2PairResult span`).html(secondConsolePair);
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #console${secondConsoleNumber}PairResult span`).html(secondConsolePair);
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #wheel${wheelNumber} #cn-button`).html(secondConsoleValue);
 
   const terminal = data[firstConsolePair][secondConsolePair]
   console.info (`Terminal is ${terminal}`)
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).html(terminal);
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #nodeToActivateValue`).html(terminal);
   
   color = terminal.split(' ')[0];
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).css('color', color)
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #nodeToActivateValue`).css('color', color)
 
   return
 }

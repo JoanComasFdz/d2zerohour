@@ -1,17 +1,17 @@
-function clearThirdWheel(singe, secondConsoleNumber, thirdWheelNumber) {
+function clearThirdWheel(singe, firstConsoleNumber, secondConsoleNumber, thirdWheelNumber) {
   // Make third wheel items look deactivated.
   for (let i = 1; i <= 12; i++) {
-    $(`#${singe}-console1${secondConsoleNumber} #w${thirdWheelNumber}li${i}`).addClass("overlay");
+    $(`#${singe}-console${firstConsoleNumber}${secondConsoleNumber} #w${thirdWheelNumber}li${i}`).addClass("overlay");
   }
   // Remove yellow highight.
-  $(`#${singe}-console1${secondConsoleNumber} #wheel${thirdWheelNumber} #cn-wrapper a`).removeClass(`active`);
+  $(`#${singe}-console${firstConsoleNumber}${secondConsoleNumber} #wheel${thirdWheelNumber} #cn-wrapper a`).removeClass(`active`);
   // Reset selected value
   // console1RightValue = ``
-  $(`#${singe}-console1${secondConsoleNumber} #wheel${thirdWheelNumber} #cn-button`).html(``);
+  $(`#${singe}-console${firstConsoleNumber}${secondConsoleNumber} #wheel${thirdWheelNumber} #cn-button`).html(``);
   // Reset pair result ?
-  $(`#${singe}-console1${secondConsoleNumber} #console2PairResult span`).html(`-`);
+  $(`#${singe}-console${firstConsoleNumber}${secondConsoleNumber} #console2PairResult span`).html(`-`);
 
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).html('Nope');
-  $(`#${singe}TabContent #${singe}-console1${secondConsoleNumber} #nodeToActivateValue`).css('color', 'gray')
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #nodeToActivateValue`).html('Nope');
+  $(`#${singe}TabContent #${singe}-console${firstConsoleNumber}${secondConsoleNumber} #nodeToActivateValue`).css('color', 'gray')
   
 }
