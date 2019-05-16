@@ -1,223 +1,115 @@
 <!DOCTYPE html>
 <html lang="en" >
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="theme-color" content="#000">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#000">
 
+    <title>Destiny 2: Zero Hour Void Configuration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  
+    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,700" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-  <title>Destiny 2: Zero Hour Void Configuration</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
- 
-  <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,700" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <body>
 
-<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
 
-  <div class="container">
+          <ul class="nav nav-fill nav-tabs" id="menu" role="tablist"> <!-- Tab List -->
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="maps-tab" data-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="true">Maps</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="void-tab" data-toggle="tab" href="#void" role="tab" aria-controls="void" aria-selected="false">
+                  <img src="img/void.png" height="16px" />
+                  Void
+                </a>
+              </li>
 
-    <div class="row">
-      <div class="col-md-12">
-
-        <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="maps-tab" data-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="true">Maps</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="void-tab" data-toggle="tab" href="#void" role="tab" aria-controls="void" aria-selected="false">
-                <img src="img/void.png" height="16px" />
-                Void
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" id="arc-tab" data-toggle="tab" href="#arc" role="tab" aria-controls="arc" aria-selected="false">
-                <img src="img/arc.png" height="16px" />
-                Arc
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" id="solar-tab" data-toggle="tab" href="#solar" role="tab" aria-controls="solar" aria-selected="false">
-                <img src="img/solar.png" height="16px" />
-                Solar
-              </a>
-            </li>
-        </ul>
-
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <p>This is just a little tool to help you complete the Configuration quests in the Zero Hour mission in
-                Destiny 2.
-              </p>
-              <p>
-                Choose if you want to use Console 1 and Console 2  or Console 1 and Console 3 (look in the maps tab where they are).
-              </p>
-              <p>
-                When looking at Console 1, enter the values on the respective dials. The second and third dials will highlight only the options that have a Terminal associated.
-              </p>
-              <p>
-                If after selecting the values of the first console, there is only 1 possible value for the third dial, it will be automatically selected.
-              </p>
+              <li class="nav-item">
+                <a class="nav-link" id="arc-tab" data-toggle="tab" href="#arc" role="tab" aria-controls="arc" aria-selected="false">
+                  <img src="img/arc.png" height="16px" />
+                  Arc
+                </a>
+              </li>
               
-              <h2>Thanks</h2>
-              <p>This is just a tool developed on top of the incredible effort done by the Destiny Community in <a href="https://www.reddit.com/r/RaidSecrets">/r/RaidSecrets.</a> and <a href="https://www.reddit.com/r/DestinyTheGame">/r/DestinyTheGame</a></p>
-              <p>I do not take any credit for the data here shown, I am jsut trying to automate activating the correct terminal.</p>
-              <p>The links I used to create this tool are:</p>
-              <p><a href="https://www.reddit.com/r/DestinyTheGame/comments/bmgpdz/how_to_solve_the_void_configuration_puzzle_full/">How to solve the “Void Configuration” puzzle. [FULL GUIDE].</a></p>
-              <p><a href="https://www.reddit.com/r/raidsecrets/comments/bmglqh/how_to_solve_the_void_configuration_puzzle_full/">How to solve the "Void Configuration" Puzzle [FULL GUIDE].</a></p>
-              <p><a href="https://www.reddit.com/r/DestinyTheGame/comments/boqlwl/arc_configuration_infographic/">Arc Configuration Infographic</a></p>
-              <p><iframe width="100%" height="460" src="https://www.youtube.com/embed/vyvhkzxyHZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-              <p>Also, <a href="https://github.com/SonosAranei">Sonos</a> has been godsend with the ciruclar menu and overall help developing this :)</p>
-              <p>And thanks Bungie for doing such incredible game!</p>
-          </div>
+              <li class="nav-item">
+                <a class="nav-link" id="solar-tab" data-toggle="tab" href="#solar" role="tab" aria-controls="solar" aria-selected="false">
+                  <img src="img/solar.png" height="16px" />
+                  Solar
+                </a>
+              </li>
+          </ul> <!-- Tab List -->
 
-          <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
-            <div class="row">
-              <div class="col-md-12">
-                <h1>Map</h1>
-                <img src="img/map.png" class="img-fluid"/>
+          <div class="tab-content" id="tabContent"> <!-- Tab Content -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <p>This is just a little tool to help you complete the Configuration quests in the Zero Hour mission in
+                  Destiny 2.
+                </p>
+                <p>
+                  Choose if you want to use Console 1 and Console 2  or Console 1 and Console 3 (look in the maps tab where they are).
+                </p>
+                <p>
+                  When looking at Console 1, enter the values on the respective dials. The second and third dials will highlight only the options that have a Terminal associated.
+                </p>
+                <p>
+                  If after selecting the values of the first console, there is only 1 possible value for the third dial, it will be automatically selected.
+                </p>
+                
+                <h2>Thanks</h2>
+                <p>This is just a tool developed on top of the incredible effort done by the Destiny Community in <a href="https://www.reddit.com/r/RaidSecrets">/r/RaidSecrets.</a> and <a href="https://www.reddit.com/r/DestinyTheGame">/r/DestinyTheGame</a></p>
+                <p>I do not take any credit for the data here shown, I am jsut trying to automate activating the correct terminal.</p>
+                <p>The links I used to create this tool are:</p>
+                <p><a href="https://www.reddit.com/r/DestinyTheGame/comments/bmgpdz/how_to_solve_the_void_configuration_puzzle_full/">How to solve the “Void Configuration” puzzle. [FULL GUIDE].</a></p>
+                <p><a href="https://www.reddit.com/r/raidsecrets/comments/bmglqh/how_to_solve_the_void_configuration_puzzle_full/">How to solve the "Void Configuration" Puzzle [FULL GUIDE].</a></p>
+                <p><a href="https://www.reddit.com/r/DestinyTheGame/comments/boqlwl/arc_configuration_infographic/">Arc Configuration Infographic</a></p>
+                <p><iframe width="100%" height="460" src="https://www.youtube.com/embed/vyvhkzxyHZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                <p>Also, <a href="https://github.com/SonosAranei">Sonos</a> has been godsend with the ciruclar menu and overall help developing this :)</p>
+                <p>And thanks Bungie for doing such incredible game!</p>
+            </div> <!-- Home Tab -->
+
+            <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1>Map</h1>
+                  <img src="img/map.png" class="img-fluid"/>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col-md-12">
-                  <h1>Terminals in a Room</h1>
-                <img src="img/terminals-in-room.jpeg" class="img-fluid"/>
+              <div class="row">
+                <div class="col-md-12">
+                    <h1>Terminals in a Room</h1>
+                  <img src="img/terminals-in-room.jpeg" class="img-fluid"/>
+                </div>
               </div>
-            </div>
-          </div>
+            </div> <!-- Maps Tab -->
 
-          <div class="tab-pane fade" id="void" role="tabpanel" aria-labelledby="void-tab">
-              <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
-                  <li class="nav-item">
-                      <a class="nav-link" id="void-console12-tab" data-toggle="tab" href="#void-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
-                    </li>
+            <div class="tab-pane fade" id="void" role="tabpanel" aria-labelledby="void-tab">
+                <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link" id="void-console13-tab" data-toggle="tab" href="#void-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
-                    </li>
-              </ul>
+                        <a class="nav-link" id="void-console12-tab" data-toggle="tab" href="#void-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="void-console13-tab" data-toggle="tab" href="#void-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
+                      </li>
+                </ul>
 
-              <div class="tab-content" id="voidTabContent">
-                  <div class="tab-pane fade" id="void-console12" role="tabpanel" aria-labelledby="console12-tab">
+                <div class="tab-content" id="voidTabContent">
+                    <div class="tab-pane fade" id="void-console12" role="tabpanel" aria-labelledby="console12-tab">
 
-                      <div class="row group">
-          
-                        <h1>CONSOLE 1</h1>              
-                        <div id="console1PairResult"><span>-</span></div>
-
-                        <div class="col-md-6 component" id="wheel1">
-                          <button class="cn-button" id="cn-button"></button>
-                          <div class="cn-wrapper" id="cn-wrapper">
-                            <ul>
-                              <li><a id="w1li10" data-number="10" href="#"><span>10</span></a></li>
-                              <li><a id="w1li11" data-number="11" href="#"><span>11</span></a></li>
-                              <li><a id="w1li12" data-number="12" href="#"><span>12</span></a></li>
-                              <li><a id="w1li1" data-number="1" href="#"><span>1</span></a></li>
-                              <li><a id="w1li2" data-number="2" href="#"><span>2</span></a></li>
-                              <li><a id="w1li3" data-number="3" href="#"><span>3</span></a></li>
-                              <li><a id="w1li4" data-number="4" href="#"><span>4</span></a></li>
-                              <li><a id="w1li5" data-number="5" href="#"><span>5</span></a></li>
-                              <li><a id="w1li6" data-number="6" href="#"><span>6</span></a></li>
-                              <li><a id="w1li7" data-number="7" href="#"><span>7</span7></a></li>
-                              <li><a id="w1li8" data-number="8" href="#"><span>8</span></a></li>
-                              <li><a id="w1li9" data-number="9" href="#"><span>9</span></a></li>
-                            </ul>
-                          </div>
-                        </div>    
-                        
-                        <div class="component col-md-6"  id="wheel2">
-                          <button class="cn-button" id="cn-button"></button>
-                          <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                            <ul>
-                              <li><a id="w2li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                              <li><a id="w2li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                              <li><a id="w2li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                              <li><a id="w2li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                              <li><a id="w2li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                              <li><a id="w2li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                              <li><a id="w2li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                              <li><a id="w2li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                              <li><a id="w2li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                              <li><a id="w2li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                              <li><a id="w2li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                              <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                            </ul>
-                          </div>
-                          </div>
-                        </div>
-                      
-                        <div id="result">
-                            <div id="nodeToActivate">
-                              <span id='nodeToActivateValue'>RESULT</span>
-                            </div>
-                        </div>
-          
                         <div class="row group">
-                      
-                          <h1>CONSOLE 2</h1>    
-                          <div id="console2PairResult"><span>-</span></div>
-                          <div class="component col-md-6" id="wheel3">
-                            <!-- <button class="cn-button" id="cn-button"></button>
-                            <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                              <ul>
-                                <li><a data-number="10" href="#"><span>10</span></a></li>
-                                <li><a data-number="11" href="#"><span>11</span></a></li>
-                                <li><a data-number="12" href="#"><span>12</span></a></li>
-                                <li><a data-number="1" href="#"><span>1</span></a></li>
-                                <li><a data-number="2" href="#"><span>2</span></a></li>
-                                <li><a data-number="3" href="#"><span>3</span></a></li>
-                                <li><a data-number="4" href="#"><span>4</span></a></li>
-                                <li><a data-number="5" href="#"><span>5</span></a></li>
-                                <li><a data-number="6" href="#"><span>6</span></a></li>
-                                <li><a data-number="7" href="#"><span>7</span7></a></li>
-                                <li><a data-number="8" href="#"><span>8</span></a></li>
-                                <li><a data-number="9" href="#"><span>9</span></a></li>
-                              </ul>
-                            </div> -->
-                          </div>
-                          
-                          <div class="component col-md-6"  id="wheel4">
-                            <button class="cn-button" id="cn-button"></button>
-                            <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                              <ul>
-                                <li><a id="w4li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                                <li><a id="w4li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                                <li><a id="w4li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                                <li><a id="w4li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                                <li><a id="w4li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                                <li><a id="w4li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                                <li><a id="w4li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                                <li><a id="w4li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                                <li><a id="w4li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                                <li><a id="w4li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                                <li><a id="w4li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                                <li><a id="w4li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                              </ul>
-                            </div>
-                          </div> 
-                        </div>
-          
-                        <div class="row group">
-                            <div class="row">
-                                <div class="container-fluid">                                  
-                                  <img src="img/room-terminal.png" class="img-fluid"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-          
-                    <div class="tab-pane fade" id="void-console13" role="tabpanel" aria-labelledby="console13-tab">
-                      <div class="row group">
-          
-                        <h1>CONSOLE 1</h1>              
-                        <div id="console1PairResult"><span>-</span></div>
+            
+                          <h1>CONSOLE 1</h1>              
+                          <div id="console1PairResult"><span>-</span></div>
+
                           <div class="col-md-6 component" id="wheel1">
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper" id="cn-wrapper">
@@ -237,7 +129,7 @@
                               </ul>
                             </div>
                           </div>    
-                        
+                          
                           <div class="component col-md-6"  id="wheel2">
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
@@ -256,321 +148,196 @@
                                 <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
                               </ul>
                             </div>
+                            </div>
                           </div>
-                        </div>
-                      
-                        <div id="result">
-                            <div id="nodeToActivate">
-                              <span id='nodeToActivateValue'>RESULT</span>
+                        
+                          <div id="result">
+                              <div id="nodeToActivate">
+                                <span id='nodeToActivateValue'>RESULT</span>
+                              </div>
+                          </div>
+            
+                          <div class="row group">
+                        
+                            <h1>CONSOLE 2</h1>    
+                            <div id="console2PairResult"><span>-</span></div>
+                            <div class="component col-md-6" id="wheel3">
+                              <!-- <button class="cn-button" id="cn-button"></button>
+                              <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                                <ul>
+                                  <li><a data-number="10" href="#"><span>10</span></a></li>
+                                  <li><a data-number="11" href="#"><span>11</span></a></li>
+                                  <li><a data-number="12" href="#"><span>12</span></a></li>
+                                  <li><a data-number="1" href="#"><span>1</span></a></li>
+                                  <li><a data-number="2" href="#"><span>2</span></a></li>
+                                  <li><a data-number="3" href="#"><span>3</span></a></li>
+                                  <li><a data-number="4" href="#"><span>4</span></a></li>
+                                  <li><a data-number="5" href="#"><span>5</span></a></li>
+                                  <li><a data-number="6" href="#"><span>6</span></a></li>
+                                  <li><a data-number="7" href="#"><span>7</span7></a></li>
+                                  <li><a data-number="8" href="#"><span>8</span></a></li>
+                                  <li><a data-number="9" href="#"><span>9</span></a></li>
+                                </ul>
+                              </div> -->
                             </div>
-                        </div>
-          
+                            
+                            <div class="component col-md-6"  id="wheel4">
+                              <button class="cn-button" id="cn-button"></button>
+                              <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                                <ul>
+                                  <li><a id="w4li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                                  <li><a id="w4li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                                  <li><a id="w4li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                                  <li><a id="w4li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                                  <li><a id="w4li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                                  <li><a id="w4li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                                  <li><a id="w4li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                                  <li><a id="w4li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                                  <li><a id="w4li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                                  <li><a id="w4li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                                  <li><a id="w4li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                                  <li><a id="w4li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                                </ul>
+                              </div>
+                            </div> 
+                          </div>
+            
+                          <div class="row group">
+                              <div class="row">
+                                  <div class="container-fluid">                                  
+                                    <img src="img/room-terminal.png" class="img-fluid"/>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+            
+                      <div class="tab-pane fade" id="void-console13" role="tabpanel" aria-labelledby="console13-tab">
                         <div class="row group">
-                      
-                          <h1>CONSOLE 3</h1>    
-                          <div id="console2PairResult"><span>-</span></div>
-                          <div class="component col-md-6" id="wheel3">
-                            <button class="cn-button" id="cn-button"></button>
-                            <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                              <ul>
-                                <li><a id="w3li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                                <li><a id="w3li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                                <li><a id="w3li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                                <li><a id="w3li1"  data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                                <li><a id="w3li2"  data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                                <li><a id="w3li3"  data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                                <li><a id="w3li4"  data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                                <li><a id="w3li5"  data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                                <li><a id="w3li6"  data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                                <li><a id="w3li7"  data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                                <li><a id="w3li8"  data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                                <li><a id="w3li9"  data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                              </ul>
+            
+                          <h1>CONSOLE 1</h1>              
+                          <div id="console1PairResult"><span>-</span></div>
+                            <div class="col-md-6 component" id="wheel1">
+                              <button class="cn-button" id="cn-button"></button>
+                              <div class="cn-wrapper" id="cn-wrapper">
+                                <ul>
+                                  <li><a id="w1li10" data-number="10" href="#"><span>10</span></a></li>
+                                  <li><a id="w1li11" data-number="11" href="#"><span>11</span></a></li>
+                                  <li><a id="w1li12" data-number="12" href="#"><span>12</span></a></li>
+                                  <li><a id="w1li1" data-number="1" href="#"><span>1</span></a></li>
+                                  <li><a id="w1li2" data-number="2" href="#"><span>2</span></a></li>
+                                  <li><a id="w1li3" data-number="3" href="#"><span>3</span></a></li>
+                                  <li><a id="w1li4" data-number="4" href="#"><span>4</span></a></li>
+                                  <li><a id="w1li5" data-number="5" href="#"><span>5</span></a></li>
+                                  <li><a id="w1li6" data-number="6" href="#"><span>6</span></a></li>
+                                  <li><a id="w1li7" data-number="7" href="#"><span>7</span7></a></li>
+                                  <li><a id="w1li8" data-number="8" href="#"><span>8</span></a></li>
+                                  <li><a id="w1li9" data-number="9" href="#"><span>9</span></a></li>
+                                </ul>
+                              </div>
+                            </div>    
+                          
+                            <div class="component col-md-6"  id="wheel2">
+                              <button class="cn-button" id="cn-button"></button>
+                              <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                                <ul>
+                                  <li><a id="w2li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                                  <li><a id="w2li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                                  <li><a id="w2li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                                  <li><a id="w2li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                                  <li><a id="w2li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                                  <li><a id="w2li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                                  <li><a id="w2li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                                  <li><a id="w2li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                                  <li><a id="w2li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                                  <li><a id="w2li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                                  <li><a id="w2li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                                  <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                                </ul>
+                              </div>
                             </div>
+                          </div>
+                        
+                          <div id="result">
+                              <div id="nodeToActivate">
+                                <span id='nodeToActivateValue'>RESULT</span>
+                              </div>
+                          </div>
+            
+                          <div class="row group">
+                        
+                            <h1>CONSOLE 3</h1>    
+                            <div id="console2PairResult"><span>-</span></div>
+                            <div class="component col-md-6" id="wheel3">
+                              <button class="cn-button" id="cn-button"></button>
+                              <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                                <ul>
+                                  <li><a id="w3li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                                  <li><a id="w3li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                                  <li><a id="w3li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                                  <li><a id="w3li1"  data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                                  <li><a id="w3li2"  data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                                  <li><a id="w3li3"  data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                                  <li><a id="w3li4"  data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                                  <li><a id="w3li5"  data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                                  <li><a id="w3li6"  data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                                  <li><a id="w3li7"  data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                                  <li><a id="w3li8"  data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                                  <li><a id="w3li9"  data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            
+                            <div class="component col-md-6"  id="wheel4">
+                              <!-- <button class="cn-button" id="cn-button"></button>
+                              <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                                <ul>
+                                  <li><a data-number="10" href="#"><span>10</span></a></li>
+                                  <li><a data-number="11" href="#"><span>11</span></a></li>
+                                  <li><a data-number="12" href="#"><span>12</span></a></li>
+                                  <li><a data-number="1" href="#"><span>1</span></a></li>
+                                  <li><a data-number="2" href="#"><span>2</span></a></li>
+                                  <li><a data-number="3" href="#"><span>3</span></a></li>
+                                  <li><a data-number="4" href="#"><span>4</span></a></li>
+                                  <li><a data-number="5" href="#"><span>5</span></a></li>
+                                  <li><a data-number="6" href="#"><span>6</span></a></li>
+                                  <li><a data-number="7" href="#"><span>7</span7></a></li>
+                                  <li><a data-number="8" href="#"><span>8</span></a></li>
+                                  <li><a data-number="9" href="#"><span>9</span></a></li>
+                                </ul>
+                              </div> -->
+                            </div> 
+                          </div>
+                      
+                          <div class="row group">
+                              <div class="row">
+                                  <div class="col-md-10 offset-md-1">
+                                    <img src="img/room-terminal.png" class="img-fluid"/>
+                                  </div>
+                              </div>
                           </div>
                           
-                          <div class="component col-md-6"  id="wheel4">
-                            <!-- <button class="cn-button" id="cn-button"></button>
-                            <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                              <ul>
-                                <li><a data-number="10" href="#"><span>10</span></a></li>
-                                <li><a data-number="11" href="#"><span>11</span></a></li>
-                                <li><a data-number="12" href="#"><span>12</span></a></li>
-                                <li><a data-number="1" href="#"><span>1</span></a></li>
-                                <li><a data-number="2" href="#"><span>2</span></a></li>
-                                <li><a data-number="3" href="#"><span>3</span></a></li>
-                                <li><a data-number="4" href="#"><span>4</span></a></li>
-                                <li><a data-number="5" href="#"><span>5</span></a></li>
-                                <li><a data-number="6" href="#"><span>6</span></a></li>
-                                <li><a data-number="7" href="#"><span>7</span7></a></li>
-                                <li><a data-number="8" href="#"><span>8</span></a></li>
-                                <li><a data-number="9" href="#"><span>9</span></a></li>
-                              </ul>
-                            </div> -->
-                          </div> 
-                        </div>
-                    
-                        <div class="row group">
-                            <div class="row">
-                                <div class="col-md-10 offset-md-1">
-                                  <img src="img/room-terminal.png" class="img-fluid"/>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-              </div>
-          </div>
-
-          <div class="tab-pane fade" id="arc" role="tabpanel" aria-labelledby="arc-tab">
-            <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
-              <li class="nav-item">
-                  <a class="nav-link" id="arc-console12-tab" data-toggle="tab" href="#arc-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="arc-console13-tab" data-toggle="tab" href="#arc-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
-                </li>
-            </ul>
-
-            <div class="tab-content" id="arcTabContent">
-              <div class="tab-pane fade" id="arc-console12" role="tabpanel" aria-labelledby="console12-tab">
-
-                  <div class="row group">
-      
-                    <h1>CONSOLE 1</h1>              
-                    <div id="console1PairResult"><span>-</span></div>
-
-                    <div class="col-md-6 component" id="wheel1">
-                      <button class="cn-button" id="cn-button"></button>
-                      <div class="cn-wrapper" id="cn-wrapper">
-                        <ul>
-                          <li><a id="w1li10" data-number="10" href="#"><span>10</span></a></li>
-                          <li><a id="w1li11" data-number="11" href="#"><span>11</span></a></li>
-                          <li><a id="w1li12" data-number="12" href="#"><span>12</span></a></li>
-                          <li><a id="w1li1" data-number="1" href="#"><span>1</span></a></li>
-                          <li><a id="w1li2" data-number="2" href="#"><span>2</span></a></li>
-                          <li><a id="w1li3" data-number="3" href="#"><span>3</span></a></li>
-                          <li><a id="w1li4" data-number="4" href="#"><span>4</span></a></li>
-                          <li><a id="w1li5" data-number="5" href="#"><span>5</span></a></li>
-                          <li><a id="w1li6" data-number="6" href="#"><span>6</span></a></li>
-                          <li><a id="w1li7" data-number="7" href="#"><span>7</span7></a></li>
-                          <li><a id="w1li8" data-number="8" href="#"><span>8</span></a></li>
-                          <li><a id="w1li9" data-number="9" href="#"><span>9</span></a></li>
-                        </ul>
                       </div>
-                    </div>    
-                    
-                    <div class="component col-md-6"  id="wheel2">
-                      <button class="cn-button" id="cn-button"></button>
-                      <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                        <ul>
-                          <li><a id="w2li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                          <li><a id="w2li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                          <li><a id="w2li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                          <li><a id="w2li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                          <li><a id="w2li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                          <li><a id="w2li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                          <li><a id="w2li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                          <li><a id="w2li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                          <li><a id="w2li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                          <li><a id="w2li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                          <li><a id="w2li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                          <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                        </ul>
-                      </div>
-                      </div>
-                    </div>
-                  
-                    <div id="result">
-                        <div id="nodeToActivate">
-                          <span id='nodeToActivateValue'>RESULT</span>
-                        </div>
-                    </div>
-      
-                    <div class="row group">
-                  
-                      <h1>CONSOLE 2</h1>    
-                      <div id="console2PairResult"><span>-</span></div>
-                      <div class="component col-md-6" id="wheel3">
-                        <!-- <button class="cn-button" id="cn-button"></button>
-                        <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                          <ul>
-                            <li><a data-number="10" href="#"><span>10</span></a></li>
-                            <li><a data-number="11" href="#"><span>11</span></a></li>
-                            <li><a data-number="12" href="#"><span>12</span></a></li>
-                            <li><a data-number="1" href="#"><span>1</span></a></li>
-                            <li><a data-number="2" href="#"><span>2</span></a></li>
-                            <li><a data-number="3" href="#"><span>3</span></a></li>
-                            <li><a data-number="4" href="#"><span>4</span></a></li>
-                            <li><a data-number="5" href="#"><span>5</span></a></li>
-                            <li><a data-number="6" href="#"><span>6</span></a></li>
-                            <li><a data-number="7" href="#"><span>7</span7></a></li>
-                            <li><a data-number="8" href="#"><span>8</span></a></li>
-                            <li><a data-number="9" href="#"><span>9</span></a></li>
-                          </ul>
-                        </div> -->
-                      </div>
-                      
-                      <div class="component col-md-6"  id="wheel4">
-                        <button class="cn-button" id="cn-button"></button>
-                        <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                          <ul>
-                            <li><a id="w4li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                            <li><a id="w4li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                            <li><a id="w4li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                            <li><a id="w4li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                            <li><a id="w4li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                            <li><a id="w4li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                            <li><a id="w4li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                            <li><a id="w4li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                            <li><a id="w4li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                            <li><a id="w4li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                            <li><a id="w4li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                            <li><a id="w4li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                          </ul>
-                        </div>
-                      </div> 
-                    </div>
-      
-                    <div class="row group">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                              <img src="img/room-terminal.png" class="img-fluid"/>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-      
-              <div class="tab-pane fade" id="arc-console13" role="tabpanel" aria-labelledby="console13-tab">
-                <div class="row group"> <!-- row first console -->
-    
-                  <h1>CONSOLE 1</h1>              
-                  <div id="console1PairResult"><span>-</span></div>
-                    <div class="col-md-6 component" id="wheel1">
-                      <button class="cn-button" id="cn-button"></button>
-                      <div class="cn-wrapper" id="cn-wrapper">
-                        <ul>
-                          <li><a id="w1li10" data-number="10" href="#"><span>10</span></a></li>
-                          <li><a id="w1li11" data-number="11" href="#"><span>11</span></a></li>
-                          <li><a id="w1li12" data-number="12" href="#"><span>12</span></a></li>
-                          <li><a id="w1li1" data-number="1" href="#"><span>1</span></a></li>
-                          <li><a id="w1li2" data-number="2" href="#"><span>2</span></a></li>
-                          <li><a id="w1li3" data-number="3" href="#"><span>3</span></a></li>
-                          <li><a id="w1li4" data-number="4" href="#"><span>4</span></a></li>
-                          <li><a id="w1li5" data-number="5" href="#"><span>5</span></a></li>
-                          <li><a id="w1li6" data-number="6" href="#"><span>6</span></a></li>
-                          <li><a id="w1li7" data-number="7" href="#"><span>7</span7></a></li>
-                          <li><a id="w1li8" data-number="8" href="#"><span>8</span></a></li>
-                          <li><a id="w1li9" data-number="9" href="#"><span>9</span></a></li>
-                        </ul>
-                      </div>
-                    </div>    
-                  
-                    <div class="component col-md-6"  id="wheel2">
-                      <button class="cn-button" id="cn-button"></button>
-                      <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                        <ul>
-                          <li><a id="w2li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                          <li><a id="w2li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                          <li><a id="w2li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                          <li><a id="w2li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                          <li><a id="w2li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                          <li><a id="w2li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                          <li><a id="w2li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                          <li><a id="w2li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                          <li><a id="w2li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                          <li><a id="w2li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                          <li><a id="w2li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                          <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                </div>  <!-- row first console -->
-                
-                <div id="result">
-                  <div id="nodeToActivate">
-                    <span id='nodeToActivateValue'>RESULT</span>
-                  </div>
-                </div>  <!-- result -->
-    
-                <div class="row group">  <!-- row second console -->
-              
-                  <h1>CONSOLE 3</h1>    
-                  <div id="console2PairResult"><span>-</span></div>
-                  <div class="component col-md-6" id="wheel3">
-                    <button class="cn-button" id="cn-button"></button>
-                    <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                      <ul>
-                        <li><a id="w3li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                        <li><a id="w3li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                        <li><a id="w3li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                        <li><a id="w3li1"  data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                        <li><a id="w3li2"  data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                        <li><a id="w3li3"  data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                        <li><a id="w3li4"  data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                        <li><a id="w3li5"  data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                        <li><a id="w3li6"  data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                        <li><a id="w3li7"  data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                        <li><a id="w3li8"  data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                        <li><a id="w3li9"  data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="component col-md-6"  id="wheel4">
-                    <!-- <button class="cn-button" id="cn-button"></button>
-                    <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                      <ul>
-                        <li><a data-number="10" href="#"><span>10</span></a></li>
-                        <li><a data-number="11" href="#"><span>11</span></a></li>
-                        <li><a data-number="12" href="#"><span>12</span></a></li>
-                        <li><a data-number="1" href="#"><span>1</span></a></li>
-                        <li><a data-number="2" href="#"><span>2</span></a></li>
-                        <li><a data-number="3" href="#"><span>3</span></a></li>
-                        <li><a data-number="4" href="#"><span>4</span></a></li>
-                        <li><a data-number="5" href="#"><span>5</span></a></li>
-                        <li><a data-number="6" href="#"><span>6</span></a></li>
-                        <li><a data-number="7" href="#"><span>7</span7></a></li>
-                        <li><a data-number="8" href="#"><span>8</span></a></li>
-                        <li><a data-number="9" href="#"><span>9</span></a></li>
-                      </ul>
-                    </div> -->
-                  </div> 
-                </div> <!-- row second console -->
-              
-                <div class="row group">  <!-- row map -->
-                  <div class="row">
-                      <div class="col-md-12">
-                        <img src="img/room-terminal.png" class="img-fluid"/>
-                      </div>
-                  </div>
-                </div>  <!-- row map -->
-                  
-              </div>  <!-- console13-tab -->
-            </div>
-          </div>
+            </div> <!-- Void Tab -->
 
-          <div class="tab-pane fade" id="solar" role="tabpanel" aria-labelledby="solar-tab">
-            <p></p>Like the OG tower, it is still under construction...</p>
-            <div style="display:none"> 
-
+            <div class="tab-pane fade" id="arc" role="tabpanel" aria-labelledby="arc-tab">
               <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="solar-console12-tab" data-toggle="tab" href="#solar-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
+                    <a class="nav-link" id="arc-console12-tab" data-toggle="tab" href="#arc-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="solar-console13-tab" data-toggle="tab" href="#solar-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
+                    <a class="nav-link" id="arc-console13-tab" data-toggle="tab" href="#arc-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
                   </li>
               </ul>
-  
-              <div class="tab-content" id="solarTabContent">
-                <div class="tab-pane fade" id="solar-console12" role="tabpanel" aria-labelledby="console12-tab">
-  
+
+              <div class="tab-content" id="arcTabContent">
+                <div class="tab-pane fade" id="arc-console12" role="tabpanel" aria-labelledby="console12-tab">
+
                     <div class="row group">
         
                       <h1>CONSOLE 1</h1>              
                       <div id="console1PairResult"><span>-</span></div>
-  
+
                       <div class="col-md-6 component" id="wheel1">
                         <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper" id="cn-wrapper">
@@ -666,23 +433,14 @@
                       <div class="row group">
                           <div class="row">
                               <div class="col-md-10 offset-md-1">
-                                <h1>Map</h1>
-                                <img src="img/map.png" class="img-fluid"/>
+                                <img src="img/room-terminal.png" class="img-fluid"/>
                               </div>
-                          </div>   
-                          
-                          <div class="row">
-                              <div class="col-md-12">
-                                <h1>Map</h1>
-                                <img src="img/terminals-in-room.jpeg" class="img-fluid"/>
-                              </div>
-                          </div>   
+                          </div>
                       </div>
                   </div>
         
-                <div class="tab-pane fade" id="solar-console13" role="tabpanel" aria-labelledby="console13-tab">
-                  <span>Like the OG Tower, it is still under construction...</span>
-                  <div class="row group">
+                <div class="tab-pane fade" id="arc-console13" role="tabpanel" aria-labelledby="console13-tab">
+                  <div class="row group"> <!-- row first console -->
       
                     <h1>CONSOLE 1</h1>              
                     <div id="console1PairResult"><span>-</span></div>
@@ -725,95 +483,336 @@
                           </ul>
                         </div>
                       </div>
-                    </div>
+                  </div>  <!-- row first console -->
                   
-                    <div id="result">
-                        <div id="nodeToActivate">
-                          <span id='nodeToActivateValue'>RESULT</span>
-                        </div>
+                  <div id="result">
+                    <div id="nodeToActivate">
+                      <span id='nodeToActivateValue'>RESULT</span>
                     </div>
+                  </div>  <!-- result -->
       
-                    <div class="row group">
-                  
-                      <h1>CONSOLE 3</h1>    
-                      <div id="console2PairResult"><span>-</span></div>
-                      <div class="component col-md-6" id="wheel3">
-                        <button class="cn-button" id="cn-button"></button>
-                        <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                          <ul>
-                            <li><a id="w3li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
-                            <li><a id="w3li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
-                            <li><a id="w3li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
-                            <li><a id="w3li1"  data-number="1" href="#" class="overlay"><span>1</span></a></li>
-                            <li><a id="w3li2"  data-number="2" href="#" class="overlay"><span>2</span></a></li>
-                            <li><a id="w3li3"  data-number="3" href="#" class="overlay"><span>3</span></a></li>
-                            <li><a id="w3li4"  data-number="4" href="#" class="overlay"><span>4</span></a></li>
-                            <li><a id="w3li5"  data-number="5" href="#" class="overlay"><span>5</span></a></li>
-                            <li><a id="w3li6"  data-number="6" href="#" class="overlay"><span>6</span></a></li>
-                            <li><a id="w3li7"  data-number="7" href="#" class="overlay"><span>7</span7></a></li>
-                            <li><a id="w3li8"  data-number="8" href="#" class="overlay"><span>8</span></a></li>
-                            <li><a id="w3li9"  data-number="9" href="#" class="overlay"><span>9</span></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      
-                      <div class="component col-md-6"  id="wheel4">
-                        <!-- <button class="cn-button" id="cn-button"></button>
-                        <div class="cn-wrapper opened-nav" id="cn-wrapper">
-                          <ul>
-                            <li><a data-number="10" href="#"><span>10</span></a></li>
-                            <li><a data-number="11" href="#"><span>11</span></a></li>
-                            <li><a data-number="12" href="#"><span>12</span></a></li>
-                            <li><a data-number="1" href="#"><span>1</span></a></li>
-                            <li><a data-number="2" href="#"><span>2</span></a></li>
-                            <li><a data-number="3" href="#"><span>3</span></a></li>
-                            <li><a data-number="4" href="#"><span>4</span></a></li>
-                            <li><a data-number="5" href="#"><span>5</span></a></li>
-                            <li><a data-number="6" href="#"><span>6</span></a></li>
-                            <li><a data-number="7" href="#"><span>7</span7></a></li>
-                            <li><a data-number="8" href="#"><span>8</span></a></li>
-                            <li><a data-number="9" href="#"><span>9</span></a></li>
-                          </ul>
-                        </div> -->
-                      </div> 
-                    </div>
+                  <div class="row group">  <!-- row second console -->
                 
-                    <div class="row group">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                              <h1>Map</h1>
-                              <img src="img/room-terminal.png" class="img-fluid"/>
-                            </div>
-                        </div>
+                    <h1>CONSOLE 3</h1>    
+                    <div id="console2PairResult"><span>-</span></div>
+                    <div class="component col-md-6" id="wheel3">
+                      <button class="cn-button" id="cn-button"></button>
+                      <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                        <ul>
+                          <li><a id="w3li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                          <li><a id="w3li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                          <li><a id="w3li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                          <li><a id="w3li1"  data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                          <li><a id="w3li2"  data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                          <li><a id="w3li3"  data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                          <li><a id="w3li4"  data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                          <li><a id="w3li5"  data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                          <li><a id="w3li6"  data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                          <li><a id="w3li7"  data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                          <li><a id="w3li8"  data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                          <li><a id="w3li9"  data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                        </ul>
+                      </div>
                     </div>
                     
+                    <div class="component col-md-6"  id="wheel4">
+                      <!-- <button class="cn-button" id="cn-button"></button>
+                      <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                        <ul>
+                          <li><a data-number="10" href="#"><span>10</span></a></li>
+                          <li><a data-number="11" href="#"><span>11</span></a></li>
+                          <li><a data-number="12" href="#"><span>12</span></a></li>
+                          <li><a data-number="1" href="#"><span>1</span></a></li>
+                          <li><a data-number="2" href="#"><span>2</span></a></li>
+                          <li><a data-number="3" href="#"><span>3</span></a></li>
+                          <li><a data-number="4" href="#"><span>4</span></a></li>
+                          <li><a data-number="5" href="#"><span>5</span></a></li>
+                          <li><a data-number="6" href="#"><span>6</span></a></li>
+                          <li><a data-number="7" href="#"><span>7</span7></a></li>
+                          <li><a data-number="8" href="#"><span>8</span></a></li>
+                          <li><a data-number="9" href="#"><span>9</span></a></li>
+                        </ul>
+                      </div> -->
+                    </div> 
+                  </div> <!-- row second console -->
+                
+                  <div class="row group">  <!-- row map -->
+                    <div class="row">
+                        <div class="col-md-12">
+                          <img src="img/room-terminal.png" class="img-fluid"/>
+                        </div>
+                    </div>
+                  </div>  <!-- row map -->
+                    
+                </div>  <!-- console13-tab -->
+              </div>
+            </div> <!-- Arc Tab -->
+
+            <div class="tab-pane fade" id="solar" role="tabpanel" aria-labelledby="solar-tab">
+              <p></p>Like the OG tower, it is still under construction...</p>
+              <div style="display:none"> 
+
+                <ul class="nav nav-fill nav-tabs" id="menu" role="tablist">
+                  <li class="nav-item">
+                      <a class="nav-link" id="solar-console12-tab" data-toggle="tab" href="#solar-console12" role="tab" aria-controls="console12" aria-selected="false">Console 1 + 2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="solar-console13-tab" data-toggle="tab" href="#solar-console13" role="tab" aria-controls="console13" aria-selected="false">Console 1 + 3</a>
+                    </li>
+                </ul>
+    
+                <div class="tab-content" id="solarTabContent">
+                  <div class="tab-pane fade" id="solar-console12" role="tabpanel" aria-labelledby="console12-tab">
+    
+                      <div class="row group">
+          
+                        <h1>CONSOLE 1</h1>              
+                        <div id="console1PairResult"><span>-</span></div>
+    
+                        <div class="col-md-6 component" id="wheel1">
+                          <button class="cn-button" id="cn-button"></button>
+                          <div class="cn-wrapper" id="cn-wrapper">
+                            <ul>
+                              <li><a id="w1li10" data-number="10" href="#"><span>10</span></a></li>
+                              <li><a id="w1li11" data-number="11" href="#"><span>11</span></a></li>
+                              <li><a id="w1li12" data-number="12" href="#"><span>12</span></a></li>
+                              <li><a id="w1li1" data-number="1" href="#"><span>1</span></a></li>
+                              <li><a id="w1li2" data-number="2" href="#"><span>2</span></a></li>
+                              <li><a id="w1li3" data-number="3" href="#"><span>3</span></a></li>
+                              <li><a id="w1li4" data-number="4" href="#"><span>4</span></a></li>
+                              <li><a id="w1li5" data-number="5" href="#"><span>5</span></a></li>
+                              <li><a id="w1li6" data-number="6" href="#"><span>6</span></a></li>
+                              <li><a id="w1li7" data-number="7" href="#"><span>7</span7></a></li>
+                              <li><a id="w1li8" data-number="8" href="#"><span>8</span></a></li>
+                              <li><a id="w1li9" data-number="9" href="#"><span>9</span></a></li>
+                            </ul>
+                          </div>
+                        </div>    
+                        
+                        <div class="component col-md-6"  id="wheel2">
+                          <button class="cn-button" id="cn-button"></button>
+                          <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                            <ul>
+                              <li><a id="w2li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                              <li><a id="w2li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                              <li><a id="w2li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                              <li><a id="w2li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                              <li><a id="w2li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                              <li><a id="w2li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                              <li><a id="w2li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                              <li><a id="w2li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                              <li><a id="w2li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                              <li><a id="w2li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                              <li><a id="w2li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                              <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                            </ul>
+                          </div>
+                          </div>
+                        </div>
+                      
+                        <div id="result">
+                            <div id="nodeToActivate">
+                              <span id='nodeToActivateValue'>RESULT</span>
+                            </div>
+                        </div>
+          
+                        <div class="row group">
+                      
+                          <h1>CONSOLE 2</h1>    
+                          <div id="console2PairResult"><span>-</span></div>
+                          <div class="component col-md-6" id="wheel3">
+                            <!-- <button class="cn-button" id="cn-button"></button>
+                            <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                              <ul>
+                                <li><a data-number="10" href="#"><span>10</span></a></li>
+                                <li><a data-number="11" href="#"><span>11</span></a></li>
+                                <li><a data-number="12" href="#"><span>12</span></a></li>
+                                <li><a data-number="1" href="#"><span>1</span></a></li>
+                                <li><a data-number="2" href="#"><span>2</span></a></li>
+                                <li><a data-number="3" href="#"><span>3</span></a></li>
+                                <li><a data-number="4" href="#"><span>4</span></a></li>
+                                <li><a data-number="5" href="#"><span>5</span></a></li>
+                                <li><a data-number="6" href="#"><span>6</span></a></li>
+                                <li><a data-number="7" href="#"><span>7</span7></a></li>
+                                <li><a data-number="8" href="#"><span>8</span></a></li>
+                                <li><a data-number="9" href="#"><span>9</span></a></li>
+                              </ul>
+                            </div> -->
+                          </div>
+                          
+                          <div class="component col-md-6"  id="wheel4">
+                            <button class="cn-button" id="cn-button"></button>
+                            <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                              <ul>
+                                <li><a id="w4li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                                <li><a id="w4li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                                <li><a id="w4li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                                <li><a id="w4li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                                <li><a id="w4li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                                <li><a id="w4li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                                <li><a id="w4li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                                <li><a id="w4li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                                <li><a id="w4li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                                <li><a id="w4li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                                <li><a id="w4li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                                <li><a id="w4li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                              </ul>
+                            </div>
+                          </div> 
+                        </div>
+          
+                        <div class="row group">
+                            <div class="row">
+                                <div class="col-md-10 offset-md-1">
+                                  <h1>Map</h1>
+                                  <img src="img/map.png" class="img-fluid"/>
+                                </div>
+                            </div>   
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <h1>Map</h1>
+                                  <img src="img/terminals-in-room.jpeg" class="img-fluid"/>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+          
+                  <div class="tab-pane fade" id="solar-console13" role="tabpanel" aria-labelledby="console13-tab">
+                    <span>Like the OG Tower, it is still under construction...</span>
+                    <div class="row group">
+        
+                      <h1>CONSOLE 1</h1>              
+                      <div id="console1PairResult"><span>-</span></div>
+                        <div class="col-md-6 component" id="wheel1">
+                          <button class="cn-button" id="cn-button"></button>
+                          <div class="cn-wrapper" id="cn-wrapper">
+                            <ul>
+                              <li><a id="w1li10" data-number="10" href="#"><span>10</span></a></li>
+                              <li><a id="w1li11" data-number="11" href="#"><span>11</span></a></li>
+                              <li><a id="w1li12" data-number="12" href="#"><span>12</span></a></li>
+                              <li><a id="w1li1" data-number="1" href="#"><span>1</span></a></li>
+                              <li><a id="w1li2" data-number="2" href="#"><span>2</span></a></li>
+                              <li><a id="w1li3" data-number="3" href="#"><span>3</span></a></li>
+                              <li><a id="w1li4" data-number="4" href="#"><span>4</span></a></li>
+                              <li><a id="w1li5" data-number="5" href="#"><span>5</span></a></li>
+                              <li><a id="w1li6" data-number="6" href="#"><span>6</span></a></li>
+                              <li><a id="w1li7" data-number="7" href="#"><span>7</span7></a></li>
+                              <li><a id="w1li8" data-number="8" href="#"><span>8</span></a></li>
+                              <li><a id="w1li9" data-number="9" href="#"><span>9</span></a></li>
+                            </ul>
+                          </div>
+                        </div>    
+                      
+                        <div class="component col-md-6"  id="wheel2">
+                          <button class="cn-button" id="cn-button"></button>
+                          <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                            <ul>
+                              <li><a id="w2li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                              <li><a id="w2li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                              <li><a id="w2li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                              <li><a id="w2li1" data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                              <li><a id="w2li2" data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                              <li><a id="w2li3" data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                              <li><a id="w2li4" data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                              <li><a id="w2li5" data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                              <li><a id="w2li6" data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                              <li><a id="w2li7" data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                              <li><a id="w2li8" data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                              <li><a id="w2li9" data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div id="result">
+                          <div id="nodeToActivate">
+                            <span id='nodeToActivateValue'>RESULT</span>
+                          </div>
+                      </div>
+        
+                      <div class="row group">
+                    
+                        <h1>CONSOLE 3</h1>    
+                        <div id="console2PairResult"><span>-</span></div>
+                        <div class="component col-md-6" id="wheel3">
+                          <button class="cn-button" id="cn-button"></button>
+                          <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                            <ul>
+                              <li><a id="w3li10" data-number="10" href="#" class="overlay"><span>10</span></a></li>
+                              <li><a id="w3li11" data-number="11" href="#" class="overlay"><span>11</span></a></li>
+                              <li><a id="w3li12" data-number="12" href="#" class="overlay"><span>12</span></a></li>
+                              <li><a id="w3li1"  data-number="1" href="#" class="overlay"><span>1</span></a></li>
+                              <li><a id="w3li2"  data-number="2" href="#" class="overlay"><span>2</span></a></li>
+                              <li><a id="w3li3"  data-number="3" href="#" class="overlay"><span>3</span></a></li>
+                              <li><a id="w3li4"  data-number="4" href="#" class="overlay"><span>4</span></a></li>
+                              <li><a id="w3li5"  data-number="5" href="#" class="overlay"><span>5</span></a></li>
+                              <li><a id="w3li6"  data-number="6" href="#" class="overlay"><span>6</span></a></li>
+                              <li><a id="w3li7"  data-number="7" href="#" class="overlay"><span>7</span7></a></li>
+                              <li><a id="w3li8"  data-number="8" href="#" class="overlay"><span>8</span></a></li>
+                              <li><a id="w3li9"  data-number="9" href="#" class="overlay"><span>9</span></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+                        <div class="component col-md-6"  id="wheel4">
+                          <!-- <button class="cn-button" id="cn-button"></button>
+                          <div class="cn-wrapper opened-nav" id="cn-wrapper">
+                            <ul>
+                              <li><a data-number="10" href="#"><span>10</span></a></li>
+                              <li><a data-number="11" href="#"><span>11</span></a></li>
+                              <li><a data-number="12" href="#"><span>12</span></a></li>
+                              <li><a data-number="1" href="#"><span>1</span></a></li>
+                              <li><a data-number="2" href="#"><span>2</span></a></li>
+                              <li><a data-number="3" href="#"><span>3</span></a></li>
+                              <li><a data-number="4" href="#"><span>4</span></a></li>
+                              <li><a data-number="5" href="#"><span>5</span></a></li>
+                              <li><a data-number="6" href="#"><span>6</span></a></li>
+                              <li><a data-number="7" href="#"><span>7</span7></a></li>
+                              <li><a data-number="8" href="#"><span>8</span></a></li>
+                              <li><a data-number="9" href="#"><span>9</span></a></li>
+                            </ul>
+                          </div> -->
+                        </div> 
+                      </div>
+                  
+                      <div class="row group">
+                          <div class="row">
+                              <div class="col-md-10 offset-md-1">
+                                <h1>Map</h1>
+                                <img src="img/room-terminal.png" class="img-fluid"/>
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </div>
                 </div>
+
               </div>
 
-            </div>
+            </div> <!-- Solar Tab -->
 
-          </div> <!-- solar tab -->
+          </div> <!-- Tab Content -->
 
-        </div>
+        </div> <!-- root bootstrapp columns 12 -->
+      </div> <!-- root row -->
+    </div> <!-- root div -->
+    
 
-      </div>
-    </div>
-</div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script  src="terminal/parseCSVForConsole1And.js"></script>
+    <script  src="js/index.js"></script>
+    <script src="terminal/clearSecondWheel.js"></script>
+    <script src="terminal/clearThirdWheel.js"></script>
+    <script src="terminal/getFirstConsoleRightValuesMatchingTheLeftValue.js"></script>
+    <script src="terminal/activateValuesInSecondWheel.js"></script>
+    <script src="terminal/getSecondConsolePairsForFirstConsolePair.js"></script>
+    <script src="terminal/activateValuesInThirdWheel.js"></script>
+    <script src="terminal/findTerminalForWheel1.js"></script>
+    <script src="terminal/findTerminalForWheel2.js"></script>
+    <script src="terminal/findTerminalForWheel3.js"></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-<script  src="terminal/parseCSVForConsole1And.js"></script>
-<script  src="js/index.js"></script>
-<script src="terminal/clearSecondWheel.js"></script>
-<script src="terminal/clearThirdWheel.js"></script>
-<script src="terminal/getFirstConsoleRightValuesMatchingTheLeftValue.js"></script>
-<script src="terminal/activateValuesInSecondWheel.js"></script>
-<script src="terminal/getSecondConsolePairsForFirstConsolePair.js"></script>
-<script src="terminal/activateValuesInThirdWheel.js"></script>
-<script src="terminal/findTerminalForWheel1.js"></script>
-<script src="terminal/findTerminalForWheel2.js"></script>
-<script src="terminal/findTerminalForWheel3.js"></script>
-
-</body>
+  </body>
 
 </html>
