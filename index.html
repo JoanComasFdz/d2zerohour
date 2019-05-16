@@ -8,7 +8,8 @@
     <title>Destiny 2: Zero Hour Void Configuration</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,700" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -22,29 +23,29 @@
 
           <ul class="nav nav-fill nav-tabs" id="menu" role="tablist"> <!-- Tab List -->
               <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-home"></i></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="maps-tab" data-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="true">Maps</a>
+                <a class="nav-link" id="maps-tab" data-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="true"><i class="fa fa-map"></i></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="void-tab" data-toggle="tab" href="#void" role="tab" aria-controls="void" aria-selected="false">
-                  <img src="img/void.png" height="16px" />
-                  Void
+                  <img src="img/void.png" height="30px" />
+                  
                 </a>
               </li>
 
               <li class="nav-item">
                 <a class="nav-link" id="arc-tab" data-toggle="tab" href="#arc" role="tab" aria-controls="arc" aria-selected="false">
-                  <img src="img/arc.png" height="16px" />
-                  Arc
+                  <img src="img/arc.png" height="30px" />
+                  
                 </a>
               </li>
               
               <li class="nav-item">
                 <a class="nav-link" id="solar-tab" data-toggle="tab" href="#solar" role="tab" aria-controls="solar" aria-selected="false">
-                  <img src="img/solar.png" height="16px" />
-                  Solar
+                  <img src="img/solar.png" height="30px" />
+                  
                 </a>
               </li>
           </ul> <!-- Tab List -->
@@ -108,8 +109,10 @@
             
                           <h1>CONSOLE 1</h1>              
                           <div id="console1PairResult"><span>-</span></div>
-
-                          <div class="col-md-6 component" id="wheel1">
+                          
+                          <div class="col-md-6 component" id="wheel1">  
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper" id="cn-wrapper">
                               <ul>
@@ -130,6 +133,8 @@
                           </div>    
                           
                           <div class="component col-md-6"  id="wheel2">
+                              <div class="cn-outer"></div>                          
+                              <div class="cn-inner"></div>
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
                               <ul>
@@ -164,7 +169,10 @@
                           </div>
 
                           <div class="component col-md-6" id="wheel3">
-                            <!-- <button class="cn-button" id="cn-button"></button>
+                            <!-- 
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>  
+                            <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
                               <ul>
                                 <li><a data-number="10" href="#"><span>10</span></a></li>
@@ -184,6 +192,8 @@
                           </div>
                           
                           <div class="component col-md-6"  id="wheel4">
+                              <div class="cn-outer"></div>                          
+                              <div class="cn-inner"></div>
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
                               <ul>
@@ -219,6 +229,8 @@
                         <h1>CONSOLE 1</h1>              
                         <div id="console1PairResult"><span>-</span></div>
                           <div class="col-md-6 component" id="wheel1">
+                              <div class="cn-outer"></div>                          
+                              <div class="cn-inner"></div>
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper" id="cn-wrapper">
                               <ul>
@@ -239,6 +251,8 @@
                           </div>    
                         
                           <div class="component col-md-6"  id="wheel2">
+                              <div class="cn-outer"></div>                          
+                              <div class="cn-inner"></div>
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
                               <ul>
@@ -270,6 +284,8 @@
                         <h1>CONSOLE 3</h1>    
                         <div id="console2PairResult"><span>-</span></div>
                         <div class="component col-md-6" id="wheel3">
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                           <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper opened-nav" id="cn-wrapper">
                             <ul>
@@ -290,7 +306,9 @@
                         </div>
                         
                         <div class="component col-md-6"  id="wheel4">
-                          <!-- <button class="cn-button" id="cn-button"></button>
+                          <!--<div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
+                            <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper opened-nav" id="cn-wrapper">
                             <ul>
                               <li><a data-number="10" href="#"><span>10</span></a></li>
@@ -344,6 +362,8 @@
                       <div id="console1PairResult"><span>-</span></div>
 
                       <div class="col-md-6 component" id="wheel1">
+                          <div class="cn-outer"></div>                          
+                          <div class="cn-inner"></div>
                         <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper" id="cn-wrapper">
                           <ul>
@@ -364,6 +384,8 @@
                       </div>    
                       
                       <div class="component col-md-6"  id="wheel2">
+                          <div class="cn-outer"></div>                          
+                          <div class="cn-inner"></div>
                         <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper opened-nav" id="cn-wrapper">
                           <ul>
@@ -395,7 +417,9 @@
                       <h1>CONSOLE 2</h1>    
                       <div id="console2PairResult"><span>-</span></div>
                       <div class="component col-md-6" id="wheel3">
-                        <!-- <button class="cn-button" id="cn-button"></button>
+                        <!--<div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div> 
+                          <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper opened-nav" id="cn-wrapper">
                           <ul>
                             <li><a data-number="10" href="#"><span>10</span></a></li>
@@ -415,6 +439,8 @@
                       </div>
                       
                       <div class="component col-md-6"  id="wheel4">
+                          <div class="cn-outer"></div>                          
+                          <div class="cn-inner"></div>
                         <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper opened-nav" id="cn-wrapper">
                           <ul>
@@ -450,6 +476,8 @@
                     <h1>CONSOLE 1</h1>              
                     <div id="console1PairResult"><span>-</span></div>
                       <div class="col-md-6 component" id="wheel1">
+                          <div class="cn-outer"></div>                          
+                          <div class="cn-inner"></div>
                         <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper" id="cn-wrapper">
                           <ul>
@@ -470,6 +498,8 @@
                       </div>    
                     
                       <div class="component col-md-6"  id="wheel2">
+                          <div class="cn-outer"></div>                          
+                          <div class="cn-inner"></div>
                         <button class="cn-button" id="cn-button"></button>
                         <div class="cn-wrapper opened-nav" id="cn-wrapper">
                           <ul>
@@ -501,6 +531,8 @@
                     <h1>CONSOLE 3</h1>    
                     <div id="console2PairResult"><span>-</span></div>
                     <div class="component col-md-6" id="wheel3">
+                        <div class="cn-outer"></div>                          
+                        <div class="cn-inner"></div>
                       <button class="cn-button" id="cn-button"></button>
                       <div class="cn-wrapper opened-nav" id="cn-wrapper">
                         <ul>
@@ -521,7 +553,9 @@
                     </div>
                     
                     <div class="component col-md-6"  id="wheel4">
-                      <!-- <button class="cn-button" id="cn-button"></button>
+                      <!--<div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div> 
+                        <button class="cn-button" id="cn-button"></button>
                       <div class="cn-wrapper opened-nav" id="cn-wrapper">
                         <ul>
                           <li><a data-number="10" href="#"><span>10</span></a></li>
@@ -560,6 +594,8 @@
                     <div id="console2PairResult"><span>-</span>
                     </div>
                     <div class="col-md-6 component" id="wheel1">
+                        <div class="cn-outer"></div>                          
+                        <div class="cn-inner"></div>
                       <button class="cn-button" id="cn-button"></button>
                       <div class="cn-wrapper" id="cn-wrapper">
                         <ul>
@@ -580,6 +616,8 @@
                     </div>    
                   
                     <div class="component col-md-6"  id="wheel2">
+                        <div class="cn-outer"></div>                          
+                        <div class="cn-inner"></div>
                       <button class="cn-button" id="cn-button"></button>
                       <div class="cn-wrapper opened-nav" id="cn-wrapper">
                         <ul>
@@ -612,6 +650,8 @@
                     <div id="console3PairResult"><span>-</span>
                     </div>
                     <div class="component col-md-6" id="wheel3">
+                        <div class="cn-outer"></div>                          
+                        <div class="cn-inner"></div>
                       <button class="cn-button" id="cn-button"></button>
                       <div class="cn-wrapper opened-nav" id="cn-wrapper">
                         <ul>
@@ -632,7 +672,9 @@
                     </div>
                     
                     <div class="component col-md-6"  id="wheel4">
-                      <!-- <button class="cn-button" id="cn-button"></button>
+                      <!-- <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
+                            <button class="cn-button" id="cn-button"></button>
                       <div class="cn-wrapper opened-nav" id="cn-wrapper">
                         <ul>
                           <li><a data-number="10" href="#"><span>10</span></a></li>
@@ -692,6 +734,8 @@
                         <div id="console1PairResult"><span>-</span></div>
     
                         <div class="col-md-6 component" id="wheel1">
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                           <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper" id="cn-wrapper">
                             <ul>
@@ -712,6 +756,8 @@
                         </div>    
                         
                         <div class="component col-md-6"  id="wheel2">
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                           <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper opened-nav" id="cn-wrapper">
                             <ul>
@@ -743,7 +789,9 @@
                           <h1>CONSOLE 2</h1>    
                           <div id="console2PairResult"><span>-</span></div>
                           <div class="component col-md-6" id="wheel3">
-                            <!-- <button class="cn-button" id="cn-button"></button>
+                            <!--<div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div> 
+                              <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
                               <ul>
                                 <li><a data-number="10" href="#"><span>10</span></a></li>
@@ -763,6 +811,8 @@
                           </div>
                           
                           <div class="component col-md-6"  id="wheel4">
+                              <div class="cn-outer"></div>                          
+                              <div class="cn-inner"></div>
                             <button class="cn-button" id="cn-button"></button>
                             <div class="cn-wrapper opened-nav" id="cn-wrapper">
                               <ul>
@@ -807,6 +857,8 @@
                       <h1>CONSOLE 1</h1>              
                       <div id="console1PairResult"><span>-</span></div>
                         <div class="col-md-6 component" id="wheel1">
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                           <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper" id="cn-wrapper">
                             <ul>
@@ -827,6 +879,8 @@
                         </div>    
                       
                         <div class="component col-md-6"  id="wheel2">
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                           <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper opened-nav" id="cn-wrapper">
                             <ul>
@@ -858,6 +912,8 @@
                         <h1>CONSOLE 3</h1>    
                         <div id="console2PairResult"><span>-</span></div>
                         <div class="component col-md-6" id="wheel3">
+                            <div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div>
                           <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper opened-nav" id="cn-wrapper">
                             <ul>
@@ -878,7 +934,9 @@
                         </div>
                         
                         <div class="component col-md-6"  id="wheel4">
-                          <!-- <button class="cn-button" id="cn-button"></button>
+                          <!--<div class="cn-outer"></div>                          
+                            <div class="cn-inner"></div> 
+                            <button class="cn-button" id="cn-button"></button>
                           <div class="cn-wrapper opened-nav" id="cn-wrapper">
                             <ul>
                               <li><a data-number="10" href="#"><span>10</span></a></li>

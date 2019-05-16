@@ -75,7 +75,8 @@ h1 {
 
 .tab-pane h1,
 .tab-pane h2 {
-	padding:13px 0;
+	color:#ccc;
+	padding:13px;
 	text-transform:uppercase;
 }
 
@@ -88,13 +89,131 @@ h1 {
 
 
 .group .component {
+	position:relative;
 	height:340px;
-	top:-80px;
+	top:-75px;
 }
 
 #wheel2.component,
 #wheel4.component {	
-	top:-40px;	
+	position:relative;
+	top:-50px;	
+}
+
+.cn-outer {
+	position:relative;
+	opacity:0.9;
+	top:-45px;
+	left:0px;
+	margin: 35px auto;
+	width: 360px;
+	height: 360px;
+	border-radius: 50%;
+	box-shadow: 
+	  0 0 0 15px #00292C,
+	  0 4px 15px 10px rgba(0,0,0,.6),
+	  0 5px 10px rgba(0,0,0,.3) inset;
+	background:
+	  radial-gradient(#000 170px, transparent 170px),
+	  linear-gradient(90deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(120deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(150deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(180deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(210deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(240deg, transparent 49.5%, #00ccdd 50%, transparent 50%), 
+	  radial-gradient(#000 150px, transparent 150px),
+	  linear-gradient(264deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(258deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(252deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(246deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(234deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(228deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(222deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(216deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(204deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(198deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(192deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(186deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(174deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(168deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(162deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(156deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(144deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(138deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(132deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(126deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(114deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(108deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(102deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(96deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  #000;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+  }
+
+.cn-inner {
+	position: absolute;
+	opacity:0.8;
+	top: 50%;
+	left: 50%;
+	z-index: 11;
+	margin-top: -3em;
+	margin-left: -3em;
+	padding-top: 0;
+	width: 6em;
+	height: 6em;
+	border: none;
+	border-radius: 50%;
+	background: none;
+	background-color: black;
+	text-align: center;
+	font-weight: 700;
+	font-size: 2em;
+	text-transform: uppercase;
+	cursor: pointer;
+	pointer-events:none;
+	-webkit-backface-visibility: hidden;
+
+	box-shadow: 
+	  0 0 0 15px #000,
+	  0 4px 15px 10px rgba(0,0,0,.6),
+	  0 5px 10px rgba(0,0,0,.3) inset;
+	background:
+	  radial-gradient(#000 80px, transparent 80px),
+	  linear-gradient(90deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(120deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(150deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(180deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(210deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(240deg, transparent 49.5%, #00ccdd 50%, transparent 50%), 
+	  radial-gradient(#000 85px, transparent 85px),
+	  linear-gradient(264deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(258deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(252deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(246deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(234deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(228deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(222deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(216deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(204deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(198deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(192deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(186deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(174deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(168deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(162deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(156deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(144deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(138deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(132deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(126deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(114deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(108deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(102deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  linear-gradient(96deg, transparent 49.5%, #00ccdd 50%, transparent 50%),
+	  #000;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 .cn-button {
@@ -102,11 +221,11 @@ h1 {
 	top: 50%;
 	left: 50%;
 	z-index: 11;
-	margin-top: -2em;
-	margin-left: -2em;
+	margin-top: -1.5em;
+	margin-left: -1.5em;
 	padding-top: 0;
-	width: 4em;
-	height: 4em;
+	width: 3em;
+	height: 3em;
 	border: none;
 	border-radius: 50%;
 	background: none;
@@ -202,12 +321,12 @@ h1 {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	pointer-events: auto;
-	border:5px solid #000;
+	border:2px solid #0099FF;
 }
 
 .cn-wrapper li a span {
 	position: relative;
-	top: 0.8em;
+	top: 0.1em;
 	display: block;
 	font-size: 1em;
 	font-weight: 700;
@@ -404,6 +523,8 @@ h1 {
 	transform: rotate(100deg); 
 }
 
+
+
 #console1PairResult,
 #console2PairResult,
 #console3PairResult,
@@ -486,6 +607,10 @@ h1 {
   100% { box-shadow: 0 0 -10px #FFFF00; }
 }
 
+@media (max-width:1170px) {
+	
+}
+
 @media (max-width:998px) {
 	body {
 		overflow-x:hidden;
@@ -501,6 +626,7 @@ h1 {
 	}
 	.nav-tabs a {
 		padding: 15px 0;
-		font-size:1.5em;
+		font-size:1.8em;
 	}
+
 }
